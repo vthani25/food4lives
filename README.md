@@ -1,2 +1,6 @@
-# food4lives
-Web app to manage food deliveries and volunteers
+# Food4Lives Platform
+
+A website designed to support Food4Lives by improving volunteer coordination, food delivery management, and community impact tracking.
+
+## Status
+Planning & MVP Development
