@@ -1,0 +1,233 @@
+/* Food4Lives — shared styles. Plain CSS, no framework. */
+
+:root {
+  --navy: #173a5e;
+  --red: #df2b28;
+  --ink: #1f2933;
+  --grey: #5a6b7b;
+  --line: #dfe3e8;
+  --bg: #f6f7f9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+/* ---------- top bar ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+}
+.brand span { color: var(--red); }
+
+.badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  background: #eef2f6;
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+.logout {
+  margin-left: auto;
+  font-size: 14px;
+  color: var(--grey);
+  text-decoration: none;
+}
+.logout:hover { color: var(--red); }
+
+/* ---------- layout ---------- */
+.shell {
+  display: flex;
+  align-items: flex-start;
+}
+
+.side {
+  width: 220px;
+  flex: none;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  min-height: calc(100vh - 53px);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.side a {
+  padding: 9px 12px;
+  border-radius: 6px;
+  color: var(--grey);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.side a:hover { background: var(--bg); color: var(--ink); }
+.side a.active {
+  background: #fdecec;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+main {
+  padding: 28px 32px;
+  max-width: 720px;
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 26px;
+  color: var(--navy);
+}
+
+h2 {
+  margin: 28px 0 8px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--grey);
+}
+
+.purpose {
+  margin: 0;
+  font-size: 16px;
+  color: var(--grey);
+}
+
+.later-label {
+  margin: 14px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grey);
+}
+
+ul { margin: 0; padding-left: 20px; }
+li { margin-bottom: 5px; }
+
+ul.future li { color: var(--grey); }
+
+/* ---------- landing ---------- */
+.landing-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.landing {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.landing-logo {
+  margin: 0 0 4px;
+  font-size: 32px;
+}
+.landing-logo span { color: var(--red); }
+
+.tagline {
+  margin: 0 0 24px;
+  color: var(--grey);
+  font-size: 15px;
+}
+
+.login-form {
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.login-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grey);
+  margin-bottom: 4px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 9px 11px;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.note {
+  margin: 0;
+  font-size: 12px;
+  color: var(--grey);
+}
+
+.choose {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--grey);
+}
+
+.portal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portal-links a {
+  display: block;
+  padding: 11px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+.portal-links a:hover { background: #22507f; }
+
+.signup-links {
+  margin: 22px 0 0;
+  font-size: 13px;
+  color: var(--grey);
+}
+.signup-links a { color: var(--red); }
+
+/* ---------- small screens ---------- */
+@media (max-width: 700px) {
+  .shell { flex-direction: column; }
+  .side {
+    width: 100%;
+    min-height: 0;
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .side a { white-space: nowrap; }
+  main { padding: 20px; }
+}
