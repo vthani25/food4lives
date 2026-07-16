@@ -30,61 +30,42 @@
       <a href="organization.html">Organization sign-up</a>
     </nav>
 
+    <!-- =================================================================
+         Build this page here. Everything below <main> is a spec, not UI —
+         delete the .spec block and add your own markup.
+         ================================================================= -->
     <main>
       <h1>Volunteer sign-up</h1>
-      <p class="purpose">Tell us what you can do, so we assign you the right task.</p>
+      <p class="purpose">Collect exactly what the Admin needs to assign this person to the right task.</p>
 
-      <section class="card form-card">
-        <form onsubmit="return false;">
-        <p class="field">
-          <label>Full name</label>
-          <input type="text" placeholder="Priya Raman">
-        </p>
-        <p class="field">
-          <label>Phone</label>
-          <input type="tel" placeholder="(408) 555-0142">
-        </p>
-        <p class="field">
-          <label>Email</label>
-          <input type="email" placeholder="you@email.com">
-        </p>
-        <p class="field">
-          <label>Home base / ZIP</label>
-          <input type="text" placeholder="Sunnyvale 94086">
-        </p>
-          <fieldset>
-            <legend>What can you help with?</legend>
-            <label class="check"><input type="checkbox"> Cook</label>
-            <label class="check"><input type="checkbox"> Pack</label>
-            <label class="check"><input type="checkbox"> Drive</label>
-            <label class="check"><input type="checkbox"> Pickup</label>
-          </fieldset>
-        <p class="field">
-          <label>Vehicle</label>
-          <select><option>No vehicle</option><option>Sedan (~60 boxes)</option><option>SUV (~90 boxes)</option><option>Van (~120 boxes)</option></select>
-        </p>
-          <fieldset>
-            <legend>Availability</legend>
-            <label class="check"><input type="checkbox"> Weekday mornings</label>
-            <label class="check"><input type="checkbox"> Weekday afternoons</label>
-            <label class="check"><input type="checkbox"> Weekends</label>
-          </fieldset>
-        <p class="field">
-          <label>Emergency contact</label>
-          <input type="text" placeholder="Name &amp; phone">
-        </p>
-          <button class="btn btn-primary" type="submit">Create account</button>
-        </form>
-      </section>
+      <div class="spec">
+        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
 
-      <details class="later">
-        <summary>Later, if there's time (3)</summary>
+        <h2>Fields to collect</h2>
+        <ul>
+          <li>Name, phone, email</li>
+          <li>Home base / ZIP</li>
+          <li>Skills: Cook / Pack / Drive / Pickup</li>
+          <li>Vehicle + box capacity</li>
+          <li>Availability: days + AM/PM windows</li>
+          <li>Emergency contact</li>
+        </ul>
+
+        <h2>Actions the user can take</h2>
+        <ul>
+          <li>Submit and create account, then land in the Volunteer Portal</li>
+        </ul>
+
+        <h2>Connects to</h2>
+        <p>On success → Volunteer Portal / Today.</p>
+
+        <h2>Later, if there's time</h2>
         <ul>
           <li>Preferred kitchen</li>
           <li>"Can host prep at home" flag</li>
           <li>Recurring temple-run commitment</li>
         </ul>
-      </details>
+      </div>
     </main>
   </div>
 

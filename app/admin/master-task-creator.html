@@ -33,60 +33,42 @@
       <a href="media-queue.html">Media Queue</a>
     </nav>
 
+    <!-- =================================================================
+         Build this page here. Everything below <main> is a spec, not UI —
+         delete the .spec block and add your own markup.
+         ================================================================= -->
     <main>
       <h1>Master Task Creator</h1>
-      <p class="purpose">Set one macro goal. It splits into the four tasks — you just assign people.</p>
+      <p class="purpose">Turn one macro goal into the day's assigned work. This page owns all task creation and assignment.</p>
 
-      <section class="card">
-        <form class="macro" onsubmit="return false;">
-          <label>Deliver</label>
-          <input type="number" value="250" class="macro-num">
-          <label>boxes by</label>
-          <input type="time" value="12:30">
-          <button class="btn btn-primary" type="submit">Generate split</button>
-        </form>
+      <div class="spec">
+        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
 
-        <div class="split">
-          <div class="split-card">
-            <h3 class="t-source">Sourcing</h3>
-            <p>Confirm rice, produce &amp; raw materials for 250 servings.</p>
-            <p class="muted">Temple pickup + Costco rescue</p>
-            <button class="btn btn-ghost">+ Assign</button>
-          </div>
-          <div class="split-card">
-            <h3 class="t-prep">Prep</h3>
-            <p>Cook 250 servings at the assigned kitchen.</p>
-            <p class="field">
-              <label>Kitchen</label>
-              <select><option>Sri Venkateswara Temple</option><option>Food4Lives facility</option><option>Volunteer house</option></select>
-            </p>
-            <button class="btn btn-ghost">+ Assign</button>
-          </div>
-          <div class="split-card">
-            <h3 class="t-pack">Packing</h3>
-            <p>Assemble 250 kits: box + water + napkins + utensils.</p>
-            <p class="muted">Bay B · target 11:45 AM</p>
-            <button class="btn btn-ghost">+ Assign</button>
-          </div>
-          <div class="split-card">
-            <h3 class="t-dist">Distribution</h3>
-            <p>Transport finished kits to 6 drop sites.</p>
-            <p class="muted">4 routes · Route 4 unassigned</p>
-            <button class="btn btn-ghost">+ Assign</button>
-          </div>
-        </div>
+        <h2>Components to build</h2>
+        <ul>
+          <li>Macro goal input (e.g. 250 boxes by 12:30)</li>
+          <li>Auto-split into the four task types</li>
+          <li>Per-task assignment picker, drawing from the Roster</li>
+          <li>Kitchen selector (F4L facility / temple / volunteer house)</li>
+        </ul>
 
-        <button class="btn btn-primary">Publish tasks to volunteers</button>
-      </section>
+        <h2>Actions the user can take</h2>
+        <ul>
+          <li>Set the goal and generate the split</li>
+          <li>Assign / reassign people per task</li>
+          <li>Publish tasks to volunteers</li>
+        </ul>
 
-      <details class="later">
-        <summary>Later, if there's time (3)</summary>
+        <h2>Connects to</h2>
+        <p>Pulls people from Roster. Publishes into the Volunteer Portal.</p>
+
+        <h2>Later, if there's time</h2>
         <ul>
           <li>Editable kit contents</li>
           <li>Save/reuse a split as a template</li>
           <li>Drag-and-drop reassignment</li>
         </ul>
-      </details>
+      </div>
     </main>
   </div>
 

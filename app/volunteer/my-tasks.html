@@ -32,77 +32,36 @@
       <a href="proof-of-delivery.html">Proof of Delivery</a>
     </nav>
 
+    <!-- =================================================================
+         Build this page here. Everything below <main> is a spec, not UI —
+         delete the .spec block and add your own markup.
+         ================================================================= -->
     <main>
       <h1>My Tasks</h1>
-      <p class="purpose">Everything assigned to you, plus open tasks you can claim.</p>
+      <p class="purpose">The full list of their work, beyond just today.</p>
 
-      <div class="row">
-        <section class="card grow">
-          <h2>Assigned to you</h2>
-          <ul class="tasklist">
-        <li class="task">
-          <input type="checkbox" >
-          <div class="task-body">
-            <div class="task-title">Cook 250 servings</div>
-            <div class="task-meta">8:30 AM · Temple kitchen</div>
-          </div>
-          <span class="tag t-prep">Prep</span>
-        </li>
-        <li class="task">
-          <input type="checkbox" >
-          <div class="task-body">
-            <div class="task-title">Assemble 250 kits</div>
-            <div class="task-meta">11:00 AM · Bay B</div>
-          </div>
-          <span class="tag t-pack">Pack</span>
-        </li>
-        <li class="task">
-          <input type="checkbox" >
-          <div class="task-body">
-            <div class="task-title">Drive Route 2 (90 boxes)</div>
-            <div class="task-meta">12:00 PM · Van #3</div>
-          </div>
-          <span class="tag t-dist">Deliver</span>
-        </li>
-        <li class="task">
-          <input type="checkbox" checked>
-          <div class="task-body">
-            <div class="task-title">Confirm rice from Tuesday temple pickup</div>
-            <div class="task-meta">Done 7:15 AM</div>
-          </div>
-          <span class="tag t-source">Sourcing</span>
-        </li>
-          </ul>
-        </section>
+      <div class="spec">
+        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
 
-        <section class="card side-card">
-          <h2>Open — claim a task</h2>
-          <ul class="tasklist plain">
-            <li class="task">
-              <div class="task-body">
-                <div class="task-title">Route 4 driver needed — 40 boxes</div>
-                <div class="task-meta">12:15 PM · needs a vehicle</div>
-              </div>
-              <button class="btn btn-ghost">Claim</button>
-            </li>
-            <li class="task">
-              <div class="task-body">
-                <div class="task-title">Extra packer, Bay A</div>
-                <div class="task-meta">11:00 AM · 1 hour</div>
-              </div>
-              <button class="btn btn-ghost">Claim</button>
-            </li>
-          </ul>
-        </section>
-      </div>
+        <h2>Components to build</h2>
+        <ul>
+          <li>Tasks assigned to them, grouped by task type</li>
+        </ul>
 
-      <details class="later">
-        <summary>Later, if there's time (2)</summary>
+        <h2>Actions the user can take</h2>
+        <ul>
+          <li>Mark a task complete</li>
+        </ul>
+
+        <h2>Connects to</h2>
+        <p>Pickup tasks → Pickups & Rescues. Delivery tasks → Proof of Delivery.</p>
+
+        <h2>Later, if there's time</h2>
         <ul>
           <li>Open pool of unclaimed tasks</li>
           <li>Claim an open task</li>
         </ul>
-      </details>
+      </div>
     </main>
   </div>
 

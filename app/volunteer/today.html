@@ -32,63 +32,38 @@
       <a href="proof-of-delivery.html">Proof of Delivery</a>
     </nav>
 
+    <!-- =================================================================
+         Build this page here. Everything below <main> is a spec, not UI —
+         delete the .spec block and add your own markup.
+         ================================================================= -->
     <main>
       <h1>Today</h1>
-      <p class="purpose">Everything you need to do today, pointed at the 12:30 deadline.</p>
+      <p class="purpose">The volunteer's single starting point for the day.</p>
 
-      
-      <div class="banner">
-        <div class="banner-time">12:30 <small>PM DEADLINE</small></div>
-        <div class="banner-prog">
-          <div class="banner-row"><span>160 of 250 kits packed</span><span>1h 42m left</span></div>
-          <div class="progress"><span style="width:64%"></span></div>
-        </div>
-      </div>
+      <div class="spec">
+        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
 
-      <div class="row">
-        <section class="card grow">
-          <h2>Your tasks today</h2>
-          <ul class="tasklist">
-        <li class="task">
-          <input type="checkbox" >
-          <div class="task-body">
-            <div class="task-title">Cook 250 servings — lemon rice &amp; sambar</div>
-            <div class="task-meta">8:30 AM · Temple kitchen · with 5 volunteers</div>
-          </div>
-          <span class="tag t-prep">Prep</span>
-        </li>
-        <li class="task">
-          <input type="checkbox" >
-          <div class="task-body">
-            <div class="task-title">Assemble 250 kits: box + water + napkin + utensils</div>
-            <div class="task-meta">11:00 AM · Packing bay B</div>
-          </div>
-          <span class="tag t-pack">Pack</span>
-        </li>
-        <li class="task">
-          <input type="checkbox" >
-          <div class="task-body">
-            <div class="task-title">Drive Route 2 — Downtown shelter + 2 stops</div>
-            <div class="task-meta">12:00 PM · Van #3 · 90 boxes</div>
-          </div>
-          <span class="tag t-dist">Deliver</span>
-        </li>
-          </ul>
-        </section>
+        <h2>Components to build</h2>
+        <ul>
+          <li>Countdown / progress toward the 12:30 deadline</li>
+          <li>Their assigned tasks, colour-coded by task type</li>
+          <li>Shortcut to Log Leftovers</li>
+        </ul>
 
-        <section class="card side-card">
-          <h2>Found leftover food?</h2>
-          <p class="muted">Rescued something from Costco or Kroger? Log it so the kitchen can plan.</p>
-          <a class="btn btn-primary" href="pickups.html">+ Log Leftovers</a>
-        </section>
-      </div>
+        <h2>Actions the user can take</h2>
+        <ul>
+          <li>Mark a task complete</li>
+          <li>Jump to Log Leftovers</li>
+        </ul>
 
-      <details class="later">
-        <summary>Later, if there's time (1)</summary>
+        <h2>Connects to</h2>
+        <p>Tasks link to their detail. Log Leftovers → Pickups & Rescues.</p>
+
+        <h2>Later, if there's time</h2>
         <ul>
           <li>Personal impact stat ("meals you helped deliver this week")</li>
         </ul>
-      </details>
+      </div>
     </main>
   </div>
 

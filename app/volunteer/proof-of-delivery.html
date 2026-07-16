@@ -32,70 +32,38 @@
       <a href="proof-of-delivery.html" class="active">Proof of Delivery</a>
     </nav>
 
+    <!-- =================================================================
+         Build this page here. Everything below <main> is a spec, not UI —
+         delete the .spec block and add your own markup.
+         ================================================================= -->
     <main>
       <h1>Proof of Delivery</h1>
-      <p class="purpose">After each drop-off, upload a photo. It feeds the admin's Media Queue.</p>
+      <p class="purpose">Close the loop on a drop-off with evidence.</p>
 
-      <div class="row">
-        <section class="card side-card">
-          <span class="pill crit">Route 2 · Stop 1 of 3</span>
-          <h2>Downtown Shelter</h2>
-          <p class="muted">421 Market St · 90 boxes</p>
-          <form onsubmit="return false;">
-        <p class="field">
-          <label>Delivery photo</label>
-          <input type="file" accept="image/*" capture="environment">
-        </p>
-        <p class="field">
-          <label>Boxes delivered</label>
-          <input type="number" value="90">
-        </p>
-        <p class="field">
-          <label>Drop-off time</label>
-          <input type="time" value="12:34">
-        </p>
-            <button class="btn btn-primary" type="submit">Mark stop complete</button>
-          </form>
-        </section>
+      <div class="spec">
+        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
 
-        <section class="card grow">
-          <h2>Today's route — 1 of 3 done</h2>
-          <ul class="tasklist">
-        <li class="task">
-          <input type="checkbox" checked>
-          <div class="task-body">
-            <div class="task-title">Stop 1 — Downtown Shelter (90 boxes)</div>
-            <div class="task-meta">12:34 PM · photo uploaded</div>
-          </div>
-          <span class="tag t-dist">Done</span>
-        </li>
-        <li class="task">
-          <input type="checkbox" >
-          <div class="task-body">
-            <div class="task-title">Stop 2 — Riverside Encampment (60 boxes)</div>
-            <div class="task-meta">pending</div>
-          </div>
-          <span class="tag t-dist">Next</span>
-        </li>
-        <li class="task">
-          <input type="checkbox" >
-          <div class="task-body">
-            <div class="task-title">Stop 3 — Eastside Motel (40 boxes)</div>
-            <div class="task-meta">pending</div>
-          </div>
-          <span class="tag t-dist">Next</span>
-        </li>
-          </ul>
-        </section>
-      </div>
+        <h2>Components to build</h2>
+        <ul>
+          <li>Current stop details (site, box count)</li>
+          <li>Photo upload</li>
+          <li>Boxes delivered + drop-off time fields</li>
+        </ul>
 
-      <details class="later">
-        <summary>Later, if there's time (2)</summary>
+        <h2>Actions the user can take</h2>
+        <ul>
+          <li>Upload a proof photo and mark the stop complete</li>
+        </ul>
+
+        <h2>Connects to</h2>
+        <p>Photos flow to the Admin Console's Media Queue.</p>
+
+        <h2>Later, if there's time</h2>
         <ul>
           <li>Multi-stop route progress</li>
           <li>GPS / auto-timestamp</li>
         </ul>
-      </details>
+      </div>
     </main>
   </div>
 

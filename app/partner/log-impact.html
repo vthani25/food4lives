@@ -32,68 +32,38 @@
       <a href="our-deliveries.html">Our Deliveries</a>
     </nav>
 
+    <!-- =================================================================
+         Build this page here. Everything below <main> is a spec, not UI —
+         delete the .spec block and add your own markup.
+         ================================================================= -->
     <main>
       <h1>Log Impact</h1>
-      <p class="purpose">Record when you dropped off and how many meals, with a photo.</p>
+      <p class="purpose">Capture the required post-delivery report.</p>
 
-      <div class="row">
-        <section class="card side-card">
-          <h2>New delivery log</h2>
-          <p class="muted">Wed, July 9 · Downtown route</p>
-          <form onsubmit="return false;">
-        <p class="field">
-          <label>Exact drop-off time</label>
-          <input type="time" value="12:36">
-        </p>
-        <p class="field">
-          <label>Total meals delivered</label>
-          <input type="number" value="118">
-        </p>
-        <p class="field">
-          <label>Drop-off site</label>
-          <select><option>Downtown Shelter — 421 Market St</option><option>Riverside Encampment</option></select>
-        </p>
-        <p class="field">
-          <label>Proof photo</label>
-          <input type="file" accept="image/*">
-        </p>
-        <p class="field">
-          <label>Notes (optional)</label>
-          <textarea rows="2" placeholder="e.g. 2 boxes short"></textarea>
-        </p>
-            <button class="btn btn-primary" type="submit">Submit impact log</button>
-          </form>
-        </section>
+      <div class="spec">
+        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
 
-        <section class="card grow">
-          <h2>Recent logs</h2>
-          <ul class="tasklist">
-        <li class="task">
-          <input type="checkbox" checked>
-          <div class="task-body">
-            <div class="task-title">Mon Jul 7 — East side · 100 meals</div>
-            <div class="task-meta">12:38 PM · photo uploaded</div>
-          </div>
-          <span class="tag t-dist">Logged</span>
-        </li>
-        <li class="task">
-          <input type="checkbox" checked>
-          <div class="task-body">
-            <div class="task-title">Fri Jul 4 — Downtown · 120 meals</div>
-            <div class="task-meta">12:31 PM · photo uploaded</div>
-          </div>
-          <span class="tag t-dist">Logged</span>
-        </li>
-          </ul>
-        </section>
-      </div>
+        <h2>Components to build</h2>
+        <ul>
+          <li>Exact drop-off time</li>
+          <li>Total meals delivered</li>
+          <li>Drop-off site</li>
+          <li>Proof photo upload</li>
+        </ul>
 
-      <details class="later">
-        <summary>Later, if there's time (1)</summary>
+        <h2>Actions the user can take</h2>
+        <ul>
+          <li>Submit the impact log</li>
+        </ul>
+
+        <h2>Connects to</h2>
+        <p>Photo flows to the Media Queue. Log appears in Our Deliveries.</p>
+
+        <h2>Later, if there's time</h2>
         <ul>
           <li>Notes field</li>
         </ul>
-      </details>
+      </div>
     </main>
   </div>
 

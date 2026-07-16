@@ -30,56 +30,40 @@
       <a href="organization.html" class="active">Organization sign-up</a>
     </nav>
 
+    <!-- =================================================================
+         Build this page here. Everything below <main> is a spec, not UI —
+         delete the .spec block and add your own markup.
+         ================================================================= -->
     <main>
       <h1>Organization sign-up</h1>
-      <p class="purpose">Tell us your capacity and coverage so we can match you to routes.</p>
+      <p class="purpose">Capture a partner's capacity and coverage so they can be matched to routes.</p>
 
-      <section class="card form-card">
-        <form onsubmit="return false;">
-        <p class="field">
-          <label>Organization name</label>
-          <input type="text" placeholder="Helping Hands Outreach">
-        </p>
-        <p class="field">
-          <label>Organization type</label>
-          <select><option>Nonprofit / shelter</option><option>Faith-based</option><option>Community group</option><option>Business partner</option></select>
-        </p>
-        <p class="field">
-          <label>Primary contact name</label>
-          <input type="text" placeholder="Full name">
-        </p>
-        <p class="field">
-          <label>Contact phone</label>
-          <input type="tel" placeholder="(408) 555-0199">
-        </p>
-        <p class="field">
-          <label>Contact email</label>
-          <input type="email" placeholder="ops@org.com">
-        </p>
-        <p class="field">
-          <label>Coverage area</label>
-          <input type="text" placeholder="Regions or ZIPs you deliver to">
-        </p>
-        <p class="field">
-          <label>Daily capacity (meals)</label>
-          <input type="number" placeholder="120">
-        </p>
-        <p class="field">
-          <label>Fleet / total box capacity</label>
-          <input type="text" placeholder="2 vans, ~240 boxes">
-        </p>
-          <button class="btn btn-primary" type="submit">Submit for approval</button>
-        </form>
-      </section>
+      <div class="spec">
+        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
 
-      <details class="later">
-        <summary>Later, if there's time (3)</summary>
+        <h2>Fields to collect</h2>
+        <ul>
+          <li>Org name & type; primary contact name, phone, email</li>
+          <li>Coverage area (regions / ZIPs)</li>
+          <li>Daily capacity (meals per day)</li>
+          <li>Fleet + total box capacity</li>
+        </ul>
+
+        <h2>Actions the user can take</h2>
+        <ul>
+          <li>Submit for approval; portal unlocks once an Admin approves</li>
+        </ul>
+
+        <h2>Connects to</h2>
+        <p>On approval → Partner Portal / Overview.</p>
+
+        <h2>Later, if there's time</h2>
         <ul>
           <li>Typical available days</li>
           <li>Org logo for social attribution</li>
           <li>Delivery & food-safety agreement</li>
         </ul>
-      </details>
+      </div>
     </main>
   </div>
 

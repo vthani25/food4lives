@@ -33,43 +33,39 @@
       <a href="media-queue.html">Media Queue</a>
     </nav>
 
+    <!-- =================================================================
+         Build this page here. Everything below <main> is a spec, not UI —
+         delete the .spec block and add your own markup.
+         ================================================================= -->
     <main>
       <h1>Roster</h1>
-      <p class="purpose">Everyone you can assign from, with their skills and capacity.</p>
+      <p class="purpose">The directory of people and orgs the Admin assigns from.</p>
 
-      <section class="card">
-        <h2>Volunteers</h2>
-        <div class="table-wrap">
-          <table class="table">
-            <tr><th>Name</th><th>Home base</th><th>Can do</th><th>Vehicle</th><th>Available</th><th>Status</th></tr>
-            <tr><td>Priya R.</td><td>Sunnyvale</td><td>Cook · Drive · Pack</td><td>Sedan (60 boxes)</td><td>Mon–Fri AM</td><td><span class="pill ok">Assigned</span></td></tr>
-            <tr><td>Marcus G.</td><td>San Jose</td><td>Cook · Pickup</td><td>—</td><td>Weekends</td><td><span class="pill">Available</span></td></tr>
-            <tr><td>Sam O.</td><td>Fremont</td><td>Drive · Pickup</td><td>Van (120 boxes)</td><td>Daily</td><td><span class="pill ok">On route</span></td></tr>
-            <tr><td>Lena T.</td><td>Santa Clara</td><td>Pack</td><td>—</td><td>Tue / Thu</td><td><span class="pill">Available</span></td></tr>
-          </table>
-        </div>
-      </section>
+      <div class="spec">
+        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
 
-      <section class="card">
-        <h2>Partner organizations</h2>
-        <div class="table-wrap">
-          <table class="table">
-            <tr><th>Organization</th><th>Coverage</th><th>Daily capacity</th><th>Days claimed</th><th>Status</th></tr>
-            <tr><td>Helping Hands</td><td>Downtown + East</td><td>120 meals</td><td>Mon, Wed, Fri</td><td><span class="pill ok">Active</span></td></tr>
-            <tr><td>City Outreach</td><td>South Bay</td><td>80 meals</td><td>Thu</td><td><span class="pill ok">Active</span></td></tr>
-            <tr><td>Grace Shelter</td><td>Riverside</td><td>60 meals</td><td>—</td><td><span class="pill warn">Pending</span></td></tr>
-          </table>
-        </div>
-      </section>
+        <h2>Components to build</h2>
+        <ul>
+          <li>Volunteers: skills, vehicle + box capacity, availability</li>
+          <li>Partner orgs: coverage area, daily capacity, days claimed</li>
+        </ul>
 
-      <details class="later">
-        <summary>Later, if there's time (3)</summary>
+        <h2>Actions the user can take</h2>
+        <ul>
+          <li>View and edit a volunteer or org record</li>
+          <li>Approve a pending org sign-up</li>
+        </ul>
+
+        <h2>Connects to</h2>
+        <p>Feeds the assignment picker in Master Task Creator.</p>
+
+        <h2>Later, if there's time</h2>
         <ul>
           <li>Search / filter</li>
           <li>Per-person reliability history</li>
           <li>Invite a new volunteer or admin</li>
         </ul>
-      </details>
+      </div>
     </main>
   </div>
 
