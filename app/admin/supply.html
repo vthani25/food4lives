@@ -3,10 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Supply & Sourcing — Admin Console | Food4Lives</title>
+  <title>Supply &amp; Sourcing — Admin Console | Food4Lives</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+  <div class="devbar">
+    <strong>DEV</strong>
+    <a href="../volunteer/today.html">Volunteer</a>
+    <a href="../admin/command-center.html">Admin</a>
+    <a href="../partner/overview.html">Partner</a>
+    <a href="../signup/volunteer.html">Sign-up</a>
+    <a href="../index.html">Landing</a>
+    <span class="devbar-note">sign-in bypassed — no backend</span>
+  </div>
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
@@ -24,24 +34,35 @@
     </nav>
 
     <main>
-      <h1>Supply & Sourcing</h1>
-      <p class="purpose">Track what's coming in and flag shortfalls before they bite.</p>
+      <h1>Supply &amp; Sourcing</h1>
+      <p class="purpose">Recurring temple pickups, grocery rescues, and what's running low.</p>
 
-      <h2>Build this page</h2>
-      <ul class="core">
-        <li>Pickup calendar: temple runs + grocery rescues</li>
-        <li>Live ingredient inventory with stock levels</li>
-      </ul>
-      <p class="later-label">Later, if there's time:</p>
-      <ul class="future">
-        <li>Gap detection: "donations cover 205/250 → schedule a purchase"</li>
-      </ul>
+      <div class="row">
+        <section class="card grow">
+          <h2>July pickup calendar</h2>
+          <div class="calendar"><div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day"><span>1</span></div><div class="cal-day"><span>2</span></div><div class="cal-day pickup"><span>3</span><em>Pickup</em></div><div class="cal-day"><span>4</span></div><div class="cal-day"><span>5</span></div><div class="cal-day"><span>6</span></div><div class="cal-day pickup"><span>7</span><em>Pickup</em></div><div class="cal-day"><span>8</span></div><div class="cal-day"><span>9</span></div><div class="cal-day"><span>10</span></div><div class="cal-day"><span>11</span></div><div class="cal-day"><span>12</span></div><div class="cal-day"><span>13</span></div><div class="cal-day"><span>14</span></div><div class="cal-day pickup"><span>15</span><em>Pickup</em></div><div class="cal-day"><span>16</span></div><div class="cal-day"><span>17</span></div><div class="cal-day"><span>18</span></div><div class="cal-day"><span>19</span></div><div class="cal-day"><span>20</span></div><div class="cal-day"><span>21</span></div><div class="cal-day pickup"><span>22</span><em>Pickup</em></div><div class="cal-day"><span>23</span></div><div class="cal-day"><span>24</span></div><div class="cal-day"><span>25</span></div><div class="cal-day"><span>26</span></div><div class="cal-day"><span>27</span></div><div class="cal-day"><span>28</span></div><div class="cal-day"><span>29</span></div><div class="cal-day"><span>30</span></div><div class="cal-day"><span>31</span></div></div>
+        </section>
 
-      <h2>Actions the user can take</h2>
-      <ul class="actions">
-        <li>Schedule a temple pickup or purchase trip</li>
-        <li>Adjust inventory counts</li>
-      </ul>
+        <section class="card side-card">
+          <h2>Ingredient inventory</h2>
+          <table class="table">
+            <tr><th>Item</th><th>Qty</th><th>Status</th></tr>
+            <tr><td>Rice</td><td>420 lbs</td><td><span class="pill ok">Ample</span></td></tr>
+            <tr><td>Lentils / dal</td><td>85 lbs</td><td><span class="pill warn">Low</span></td></tr>
+            <tr><td>Fresh produce</td><td>rescue</td><td><span class="pill ok">Ample</span></td></tr>
+            <tr><td>Water bottles</td><td>1,100</td><td><span class="pill ok">Ample</span></td></tr>
+            <tr><td>Utensil kits</td><td>180</td><td><span class="pill crit">Order</span></td></tr>
+          </table>
+          <button class="btn btn-ghost">Schedule purchase trip</button>
+        </section>
+      </div>
+
+      <details class="later">
+        <summary>Later, if there's time (1)</summary>
+        <ul>
+          <li>Gap detection: "donations cover 205/250 → schedule a purchase"</li>
+        </ul>
+      </details>
     </main>
   </div>
 

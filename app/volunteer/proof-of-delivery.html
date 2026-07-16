@@ -8,6 +8,16 @@
 </head>
 <body>
 
+  <div class="devbar">
+    <strong>DEV</strong>
+    <a href="../volunteer/today.html">Volunteer</a>
+    <a href="../admin/command-center.html">Admin</a>
+    <a href="../partner/overview.html">Partner</a>
+    <a href="../signup/volunteer.html">Sign-up</a>
+    <a href="../index.html">Landing</a>
+    <span class="devbar-note">sign-in bypassed — no backend</span>
+  </div>
+
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
     <span class="badge">Volunteer Portal</span>
@@ -24,24 +34,68 @@
 
     <main>
       <h1>Proof of Delivery</h1>
-      <p class="purpose">Close the loop on a drop-off with evidence.</p>
+      <p class="purpose">After each drop-off, upload a photo. It feeds the admin's Media Queue.</p>
 
-      <h2>Build this page</h2>
-      <ul class="core">
-        <li>Current stop details (site, box count)</li>
-        <li>Photo upload</li>
-        <li>Boxes delivered + drop-off time fields</li>
-      </ul>
-      <p class="later-label">Later, if there's time:</p>
-      <ul class="future">
-        <li>Multi-stop route progress</li>
-        <li>GPS / auto-timestamp</li>
-      </ul>
+      <div class="row">
+        <section class="card side-card">
+          <span class="pill crit">Route 2 · Stop 1 of 3</span>
+          <h2>Downtown Shelter</h2>
+          <p class="muted">421 Market St · 90 boxes</p>
+          <form onsubmit="return false;">
+        <p class="field">
+          <label>Delivery photo</label>
+          <input type="file" accept="image/*" capture="environment">
+        </p>
+        <p class="field">
+          <label>Boxes delivered</label>
+          <input type="number" value="90">
+        </p>
+        <p class="field">
+          <label>Drop-off time</label>
+          <input type="time" value="12:34">
+        </p>
+            <button class="btn btn-primary" type="submit">Mark stop complete</button>
+          </form>
+        </section>
 
-      <h2>Actions the user can take</h2>
-      <ul class="actions">
-        <li>Upload a proof photo and mark the stop complete</li>
-      </ul>
+        <section class="card grow">
+          <h2>Today's route — 1 of 3 done</h2>
+          <ul class="tasklist">
+        <li class="task">
+          <input type="checkbox" checked>
+          <div class="task-body">
+            <div class="task-title">Stop 1 — Downtown Shelter (90 boxes)</div>
+            <div class="task-meta">12:34 PM · photo uploaded</div>
+          </div>
+          <span class="tag t-dist">Done</span>
+        </li>
+        <li class="task">
+          <input type="checkbox" >
+          <div class="task-body">
+            <div class="task-title">Stop 2 — Riverside Encampment (60 boxes)</div>
+            <div class="task-meta">pending</div>
+          </div>
+          <span class="tag t-dist">Next</span>
+        </li>
+        <li class="task">
+          <input type="checkbox" >
+          <div class="task-body">
+            <div class="task-title">Stop 3 — Eastside Motel (40 boxes)</div>
+            <div class="task-meta">pending</div>
+          </div>
+          <span class="tag t-dist">Next</span>
+        </li>
+          </ul>
+        </section>
+      </div>
+
+      <details class="later">
+        <summary>Later, if there's time (2)</summary>
+        <ul>
+          <li>Multi-stop route progress</li>
+          <li>GPS / auto-timestamp</li>
+        </ul>
+      </details>
     </main>
   </div>
 

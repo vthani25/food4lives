@@ -8,6 +8,16 @@
 </head>
 <body>
 
+  <div class="devbar">
+    <strong>DEV</strong>
+    <a href="../volunteer/today.html">Volunteer</a>
+    <a href="../admin/command-center.html">Admin</a>
+    <a href="../partner/overview.html">Partner</a>
+    <a href="../signup/volunteer.html">Sign-up</a>
+    <a href="../index.html">Landing</a>
+    <span class="devbar-note">sign-in bypassed — no backend</span>
+  </div>
+
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
     <span class="badge">Partner Portal</span>
@@ -24,23 +34,33 @@
 
     <main>
       <h1>Claim Route Days</h1>
-      <p class="purpose">Let partners self-select which days they own, with no admin back-and-forth.</p>
+      <p class="purpose">Pick the days your org will own the delivery route.</p>
 
-      <h2>Build this page</h2>
-      <ul class="core">
-        <li>Calendar of open vs. claimed days</li>
-        <li>Route details per day (site, meal count)</li>
-      </ul>
-      <p class="later-label">Later, if there's time:</p>
-      <ul class="future">
-        <li>Weekly recurring commitment</li>
-        <li>Release a claimed day</li>
-      </ul>
+      <div class="row">
+        <section class="card grow">
+          <h2>July availability</h2>
+          <p class="legend"><span class="pill ok">Yours</span> <span class="pill crit">Open</span></p>
+          <div class="calendar"><div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day"><span>1</span></div><div class="cal-day"><span>2</span></div><div class="cal-day"><span>3</span></div><div class="cal-day"><span>4</span></div><div class="cal-day"><span>5</span></div><div class="cal-day"><span>6</span></div><div class="cal-day claimed"><span>7</span><em>Yours</em></div><div class="cal-day open"><span>8</span><em>Open</em></div><div class="cal-day claimed"><span>9</span><em>Yours</em></div><div class="cal-day open"><span>10</span><em>Open</em></div><div class="cal-day claimed"><span>11</span><em>Yours</em></div><div class="cal-day"><span>12</span></div><div class="cal-day"><span>13</span></div><div class="cal-day open"><span>14</span><em>Open</em></div><div class="cal-day open"><span>15</span><em>Open</em></div><div class="cal-day"><span>16</span></div><div class="cal-day"><span>17</span></div><div class="cal-day"><span>18</span></div><div class="cal-day"><span>19</span></div><div class="cal-day"><span>20</span></div><div class="cal-day"><span>21</span></div><div class="cal-day"><span>22</span></div><div class="cal-day"><span>23</span></div><div class="cal-day"><span>24</span></div><div class="cal-day"><span>25</span></div><div class="cal-day"><span>26</span></div><div class="cal-day"><span>27</span></div><div class="cal-day"><span>28</span></div><div class="cal-day"><span>29</span></div><div class="cal-day"><span>30</span></div><div class="cal-day"><span>31</span></div></div>
+          <button class="btn btn-primary">Confirm selected days</button>
+        </section>
 
-      <h2>Actions the user can take</h2>
-      <ul class="actions">
-        <li>Claim an open day</li>
-      </ul>
+        <section class="card side-card">
+          <h2>Your commitment</h2>
+          <ul class="tasklist plain">
+            <li class="task"><div class="task-body"><div class="task-title">Mon Jul 7</div><div class="task-meta">East side · 100 meals</div></div></li>
+            <li class="task"><div class="task-body"><div class="task-title">Wed Jul 9</div><div class="task-meta">Downtown · 120 meals</div></div></li>
+            <li class="task"><div class="task-body"><div class="task-title">Fri Jul 11</div><div class="task-meta">Downtown · 120 meals</div></div></li>
+          </ul>
+        </section>
+      </div>
+
+      <details class="later">
+        <summary>Later, if there's time (2)</summary>
+        <ul>
+          <li>Weekly recurring commitment</li>
+          <li>Release a claimed day</li>
+        </ul>
+      </details>
     </main>
   </div>
 

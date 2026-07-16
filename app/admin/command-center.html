@@ -8,6 +8,16 @@
 </head>
 <body>
 
+  <div class="devbar">
+    <strong>DEV</strong>
+    <a href="../volunteer/today.html">Volunteer</a>
+    <a href="../admin/command-center.html">Admin</a>
+    <a href="../partner/overview.html">Partner</a>
+    <a href="../signup/volunteer.html">Sign-up</a>
+    <a href="../index.html">Landing</a>
+    <span class="devbar-note">sign-in bypassed — no backend</span>
+  </div>
+
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
     <span class="badge">Admin Console</span>
@@ -25,24 +35,94 @@
 
     <main>
       <h1>Command Center</h1>
-      <p class="purpose">See the whole day at a glance and catch what's at risk.</p>
+      <p class="purpose">The whole day at a glance, with anything at risk surfaced first.</p>
 
-      <h2>Build this page</h2>
-      <ul class="core">
-        <li>Today's target vs. progress toward the deadline</li>
-        <li>Key numbers: target, kits packed, drivers assigned, ingredients secured</li>
-        <li>The day's task pipeline across all four task types</li>
-      </ul>
-      <p class="later-label">Later, if there's time:</p>
-      <ul class="future">
-        <li>"Needs attention" card for anything unassigned</li>
-        <li>Route coverage %</li>
-      </ul>
+      
+      <div class="banner">
+        <div class="banner-time">12:30 <small>PM DEADLINE</small></div>
+        <div class="banner-prog">
+          <div class="banner-row"><span>160 of 250 kits packed</span><span>1h 42m left</span></div>
+          <div class="progress"><span style="width:64%"></span></div>
+        </div>
+      </div>
 
-      <h2>Actions the user can take</h2>
-      <ul class="actions">
-        <li>Drill into any task</li>
-      </ul>
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi-label">Target today</div>
+          <div class="kpi-value">250</div>
+          <div class="kpi-sub">boxes</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Kits packed</div>
+          <div class="kpi-value">160</div>
+          <div class="kpi-sub">64% complete</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Drivers assigned</div>
+          <div class="kpi-value">5 / 6</div>
+          <div class="kpi-sub">1 route open</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Ingredients</div>
+          <div class="kpi-value">Secured</div>
+          <div class="kpi-sub">temple + Costco</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <section class="card grow">
+          <h2>Today's task pipeline</h2>
+          <ul class="tasklist">
+        <li class="task">
+          <input type="checkbox" checked>
+          <div class="task-body">
+            <div class="task-title">Raw materials confirmed — 250 servings</div>
+            <div class="task-meta">Done · temple rice + Costco produce</div>
+          </div>
+          <span class="tag t-source">Sourcing</span>
+        </li>
+        <li class="task">
+          <input type="checkbox" >
+          <div class="task-body">
+            <div class="task-title">Cook at Temple kitchen — 6 volunteers</div>
+            <div class="task-meta">In progress · 8:30–11:00</div>
+          </div>
+          <span class="tag t-prep">Prep</span>
+        </li>
+        <li class="task">
+          <input type="checkbox" >
+          <div class="task-body">
+            <div class="task-title">250 kits at Bay B — 4 packers</div>
+            <div class="task-meta">160 / 250 done</div>
+          </div>
+          <span class="tag t-pack">Packing</span>
+        </li>
+        <li class="task">
+          <input type="checkbox" >
+          <div class="task-body">
+            <div class="task-title">4 routes → 6 drop sites</div>
+            <div class="task-meta">Route 4 unassigned</div>
+          </div>
+          <span class="tag t-dist">Deliver</span>
+        </li>
+          </ul>
+        </section>
+
+        <section class="card side-card alert">
+          <span class="pill crit">Needs you</span>
+          <h2>Route 4 has no driver</h2>
+          <p class="muted">40 boxes · Eastside · pickup 12:15 PM</p>
+          <a class="btn btn-primary" href="roster.html">Assign a driver</a>
+        </section>
+      </div>
+
+      <details class="later">
+        <summary>Later, if there's time (2)</summary>
+        <ul>
+          <li>"Needs attention" card for anything unassigned</li>
+          <li>Route coverage %</li>
+        </ul>
+      </details>
     </main>
   </div>
 
