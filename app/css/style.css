@@ -1,0 +1,168 @@
+/* ==========================================================================
+   Food4Lives — shared styles
+
+   This file only styles the SHELL: the dev bar, top bar, sidebar nav, and the
+   landing page. Page content is intentionally unstyled — add your own rules for
+   your own pages at the bottom of this file.
+
+   Plain CSS. No framework, no build step, no JavaScript.
+   ========================================================================== */
+
+:root {
+  --navy: #173a5e;
+  --red: #df2b28;
+  --ink: #1f2933;
+  --grey: #5a6b7b;
+  --line: #dfe3e8;
+  --bg: #f6f7f9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+/* ---------- dev bar (temporary — delete once real auth exists) ---------- */
+.devbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 16px;
+  background: #2b2f36;
+  color: #fff;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+.devbar strong {
+  background: var(--red);
+  border-radius: 4px;
+  padding: 1px 7px;
+  letter-spacing: 0.08em;
+}
+.devbar a { color: #cfd6de; text-decoration: none; }
+.devbar a:hover { color: #fff; text-decoration: underline; }
+.devbar-note { margin-left: auto; color: #8b939d; }
+
+/* ---------- top bar ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-size: 19px; font-weight: 700; color: var(--navy); text-decoration: none; }
+.brand span { color: var(--red); }
+.badge {
+  font-size: 13px; font-weight: 600; color: var(--navy);
+  background: #eef2f6; border-radius: 20px; padding: 4px 12px;
+}
+.logout { margin-left: auto; font-size: 14px; color: var(--grey); text-decoration: none; }
+.logout:hover { color: var(--red); }
+
+/* ---------- layout ---------- */
+.shell { display: flex; align-items: flex-start; }
+
+.side {
+  width: 210px;
+  flex: none;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  min-height: calc(100vh - 80px);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.side a {
+  padding: 9px 12px; border-radius: 6px; color: var(--grey);
+  text-decoration: none; font-size: 14px; font-weight: 500;
+}
+.side a:hover { background: var(--bg); color: var(--ink); }
+.side a.active { background: #fdecec; color: var(--navy); font-weight: 700; }
+
+main { padding: 24px 28px; max-width: 900px; flex: 1; }
+
+h1 { margin: 0 0 4px; font-size: 25px; color: var(--navy); }
+.purpose { margin: 0 0 20px; font-size: 15px; color: var(--grey); }
+
+/* ---------- the spec block (delete this from a page once you build it) ------
+   Deliberately plain so it doesn't look like finished UI.
+   -------------------------------------------------------------------------- */
+.spec {
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 16px 20px;
+  background: #fff;
+}
+.spec-note {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: var(--grey);
+  font-style: italic;
+}
+.spec h2 {
+  margin: 18px 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--grey);
+}
+.spec h2:first-of-type { margin-top: 0; }
+.spec ul { margin: 0; padding-left: 20px; font-size: 14px; }
+.spec li { margin-bottom: 4px; }
+.spec p { font-size: 14px; margin: 0; }
+
+/* ---------- landing ---------- */
+.landing-body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+.landing {
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  padding: 32px; width: 100%; max-width: 340px; text-align: center;
+}
+.landing-logo { margin: 0 0 4px; font-size: 30px; color: var(--navy); }
+.landing-logo span { color: var(--red); }
+.tagline { margin: 0 0 22px; color: var(--grey); font-size: 14px; }
+
+.dev-panel {
+  border: 1px dashed var(--red); border-radius: 8px;
+  padding: 14px; background: #fffafa; text-align: left;
+}
+.dev-title {
+  margin: 0 0 10px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; color: var(--red);
+}
+.dev-title span { font-weight: 500; letter-spacing: 0; color: var(--grey); text-transform: none; }
+.dev-links { display: flex; flex-direction: column; gap: 6px; }
+.dev-links a {
+  display: block; padding: 9px; background: var(--navy); color: #fff;
+  border-radius: 6px; text-decoration: none; font-weight: 600;
+  font-size: 13px; text-align: center;
+}
+.dev-links a:hover { background: #22507f; }
+.dev-note { margin: 10px 0 0; font-size: 11px; color: var(--grey); }
+
+.signup-links { margin: 18px 0 0; font-size: 13px; color: var(--grey); }
+.signup-links a { color: var(--red); }
+
+/* ---------- small screens ---------- */
+@media (max-width: 760px) {
+  .shell { flex-direction: column; }
+  .side {
+    width: 100%; min-height: 0; flex-direction: row;
+    overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line);
+  }
+  .side a { white-space: nowrap; }
+  main { padding: 18px; }
+  .devbar-note { display: none; }
+}
+
+/* ==========================================================================
+   YOUR STYLES — add below. Prefix or namespace them so we don't collide,
+   e.g. .volunteer-taskcard, .admin-kpi, .partner-calendar
+   ========================================================================== */
