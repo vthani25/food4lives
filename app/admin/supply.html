@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Supply &amp; Sourcing — Admin Console | Food4Lives</title>
+  <title>Supply & Sourcing — Admin Console | Food4Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
 
@@ -20,49 +24,59 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge">Admin Console</span>
+    <span class="badge azure">Admin Console</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
   <div class="shell">
     <nav class="side">
-      <a href="command-center.html">Command Center</a>
-      <a href="master-task-creator.html">Master Task Creator</a>
-      <a href="supply.html" class="active">Supply & Inventory</a>
-      <a href="roster.html">Roster</a>
-      <a href="media-queue.html">Media Queue</a>
+        <a href="command-center.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M13.4 10.6 19 5"/><path d="M4 20a9 9 0 1 1 16 0"/></svg></span>Command Center</a>
+        <a href="master-task-creator.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.6"/></svg></span>Master Task Creator</a>
+        <a href="supply.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Supply & Inventory</a>
+        <a href="roster.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/><path d="M21 20v-1a4 4 0 0 0-3-3.8"/></svg></span>Roster</a>
+        <a href="media-queue.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Media Queue</a>
     </nav>
 
-    <!-- =================================================================
-         Build this page here. Everything below <main> is a spec, not UI —
-         delete the .spec block and add your own markup.
-         ================================================================= -->
-    <main>
-      <h1>Supply &amp; Sourcing</h1>
-      <p class="purpose">Track what's coming in and flag shortfalls before they bite.</p>
+    <main class="fade-in">
+      <header class="page-head">
+        <h1>Supply & Sourcing</h1>
+        <p class="lead">Recurring temple pickups, grocery rescues, and what's running low.</p>
+      </header>
 
-      <div class="spec">
-        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
+      <div class="grid-2">
+        <section class="card">
+          <div class="card-head">
+            <h2>July pickup calendar</h2>
+            <div class="legend">
+              <span class="badge pickup">Temple</span>
+              <span class="badge ok">Rescue</span>
+            </div>
+          </div>
+          <div class="calendar"><div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day"><span class="cal-num">1</span></div><div class="cal-day"><span class="cal-num">2</span></div><div class="cal-day rescue"><span class="cal-num">3</span><em>Rescue</em></div><div class="cal-day"><span class="cal-num">4</span></div><div class="cal-day"><span class="cal-num">5</span></div><div class="cal-day"><span class="cal-num">6</span></div><div class="cal-day rescue"><span class="cal-num">7</span><em>Rescue</em></div><div class="cal-day"><span class="cal-num">8</span></div><div class="cal-day"><span class="cal-num">9</span></div><div class="cal-day"><span class="cal-num">10</span></div><div class="cal-day"><span class="cal-num">11</span></div><div class="cal-day"><span class="cal-num">12</span></div><div class="cal-day"><span class="cal-num">13</span></div><div class="cal-day"><span class="cal-num">14</span></div><div class="cal-day pickup"><span class="cal-num">15</span><em>Temple</em></div><div class="cal-day"><span class="cal-num">16</span></div><div class="cal-day"><span class="cal-num">17</span></div><div class="cal-day"><span class="cal-num">18</span></div><div class="cal-day"><span class="cal-num">19</span></div><div class="cal-day"><span class="cal-num">20</span></div><div class="cal-day"><span class="cal-num">21</span></div><div class="cal-day pickup"><span class="cal-num">22</span><em>Temple</em></div><div class="cal-day"><span class="cal-num">23</span></div><div class="cal-day"><span class="cal-num">24</span></div><div class="cal-day"><span class="cal-num">25</span></div><div class="cal-day"><span class="cal-num">26</span></div><div class="cal-day"><span class="cal-num">27</span></div><div class="cal-day"><span class="cal-num">28</span></div><div class="cal-day"><span class="cal-num">29</span></div><div class="cal-day"><span class="cal-num">30</span></div><div class="cal-day"><span class="cal-num">31</span></div></div>
+          <button class="btn btn-ghost">＋ Schedule pickup</button>
+        </section>
 
-        <h2>Components to build</h2>
-        <ul>
-          <li>Pickup calendar: temple runs + grocery rescues</li>
-          <li>Live ingredient inventory with stock levels</li>
-        </ul>
+        <aside class="stack">
+          <section class="card">
+            <h2>Ingredient inventory</h2>
+            <table class="table">
+              <thead><tr><th>Item</th><th>Qty</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Rice</td><td class="num">420 lbs</td><td><span class="badge ok">Ample</span></td></tr>
+                <tr><td>Lentils / dal</td><td class="num">85 lbs</td><td><span class="badge warn">Low</span></td></tr>
+                <tr><td>Fresh produce</td><td class="num">rescue</td><td><span class="badge ok">Ample</span></td></tr>
+                <tr><td>Water bottles</td><td class="num">1,100</td><td><span class="badge ok">Ample</span></td></tr>
+                <tr><td>Utensil kits</td><td class="num">180</td><td><span class="badge crit">Order</span></td></tr>
+              </tbody>
+            </table>
+          </section>
 
-        <h2>Actions the user can take</h2>
-        <ul>
-          <li>Schedule a temple pickup or purchase trip</li>
-          <li>Adjust inventory counts</li>
-        </ul>
-
-        <h2>Connects to</h2>
-        <p>Receives rescue logs from the Volunteer Portal. Feeds the Sourcing task.</p>
-
-        <h2>Later, if there's time</h2>
-        <ul>
-          <li>Gap detection: "donations cover 205/250 → schedule a purchase"</li>
-        </ul>
+          <section class="card alert-card soft">
+            <span class="badge warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg> Gap detected</span>
+            <p>Donations cover <strong>205 / 250</strong> meals Thursday. Schedule a purchase for the remaining 45.</p>
+            <button class="btn btn-primary">Schedule purchase trip</button>
+          </section>
+        </aside>
       </div>
     </main>
   </div>

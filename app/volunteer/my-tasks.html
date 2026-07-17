@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Tasks — Volunteer Portal | Food4Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/volunteer.css">
 </head>
 <body>
 
@@ -20,48 +24,75 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge">Volunteer Portal</span>
+    <span class="badge azure">Volunteer Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
   <div class="shell">
     <nav class="side">
-      <a href="today.html">Today</a>
-      <a href="my-tasks.html" class="active">My Tasks</a>
-      <a href="pickups.html">Pickups & Rescues</a>
-      <a href="proof-of-delivery.html">Proof of Delivery</a>
+        <a href="today.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Today</a>
+        <a href="my-tasks.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3.5 6h.01"/><path d="M3.5 12h.01"/><path d="M3.5 18h.01"/></svg></span>My Tasks</a>
+        <a href="pickups.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Pickups & Rescues</a>
+        <a href="proof-of-delivery.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Proof of Delivery</a>
+        <a href="delivery-history.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
     </nav>
 
-    <!-- =================================================================
-         Build this page here. Everything below <main> is a spec, not UI —
-         delete the .spec block and add your own markup.
-         ================================================================= -->
-    <main>
-      <h1>My Tasks</h1>
-      <p class="purpose">The full list of their work, beyond just today.</p>
+    <main class="fade-in">
+      <header class="page-head">
+        <h1>My Tasks</h1>
+        <p class="lead">Everything assigned to you. Filter by type, tap a task for details.</p>
+      </header>
+      
+      <form class="filterbar" onsubmit="return false;">
+        <label class="fchip"><input type="radio" name="tf" id="f-all" checked>All</label>
+        <label class="fchip"><input type="radio" name="tf" id="f-source">Sourcing</label>
+        <label class="fchip"><input type="radio" name="tf" id="f-prep">Prep</label>
+        <label class="fchip"><input type="radio" name="tf" id="f-pack">Packing</label>
+        <label class="fchip"><input type="radio" name="tf" id="f-dist">Distribution</label>
 
-      <div class="spec">
-        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
-
-        <h2>Components to build</h2>
-        <ul>
-          <li>Tasks assigned to them, grouped by task type</li>
+        <ul class="tasklist card">
+          
+          <li class="task cat-source">
+            <input class="task-check" type="checkbox" id="m0" checked aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-source">Sourcing</span><span class="task-time">Done 7:15 AM</span></div>
+              <p class="task-title">Confirm rice from Tuesday temple pickup</p>
+              <p class="task-meta">Sri Venkateswara Temple</p>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Count sacks against the donation slip and text Amit the total.</p></details>
+            </div>
+          </li>
+          
+          <li class="task cat-prep">
+            <input class="task-check" type="checkbox" id="m1"  aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-prep">Prep</span><span class="task-time">8:30 AM</span></div>
+              <p class="task-title">Cook 250 servings — lemon rice &amp; sambar</p>
+              <p class="task-meta">Temple kitchen</p>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Arrive by 8:15. Ask for Ravi.</p></details>
+            </div>
+          </li>
+          
+          <li class="task cat-pack">
+            <input class="task-check" type="checkbox" id="m2"  aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-pack">Packing</span><span class="task-time">11:00 AM</span></div>
+              <p class="task-title">Assemble 250 kits</p>
+              <p class="task-meta">Packing Bay B</p>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Stack by route number on pallet 3.</p></details>
+            </div>
+          </li>
+          
+          <li class="task cat-dist">
+            <input class="task-check" type="checkbox" id="m3"  aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">12:00 PM</span></div>
+              <p class="task-title">Drive Route 2 (90 boxes)</p>
+              <p class="task-meta">Van #3</p>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Route sheet in glovebox. Photo at each stop.</p></details>
+            </div>
+          </li>
         </ul>
-
-        <h2>Actions the user can take</h2>
-        <ul>
-          <li>Mark a task complete</li>
-        </ul>
-
-        <h2>Connects to</h2>
-        <p>Pickup tasks → Pickups & Rescues. Delivery tasks → Proof of Delivery.</p>
-
-        <h2>Later, if there's time</h2>
-        <ul>
-          <li>Open pool of unclaimed tasks</li>
-          <li>Claim an open task</li>
-        </ul>
-      </div>
+      </form>
     </main>
   </div>
 

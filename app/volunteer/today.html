@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Today — Volunteer Portal | Food4Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/volunteer.css">
 </head>
 <body>
 
@@ -20,50 +24,80 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge">Volunteer Portal</span>
+    <span class="badge azure">Volunteer Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
   <div class="shell">
     <nav class="side">
-      <a href="today.html" class="active">Today</a>
-      <a href="my-tasks.html">My Tasks</a>
-      <a href="pickups.html">Pickups & Rescues</a>
-      <a href="proof-of-delivery.html">Proof of Delivery</a>
+        <a href="today.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Today</a>
+        <a href="my-tasks.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3.5 6h.01"/><path d="M3.5 12h.01"/><path d="M3.5 18h.01"/></svg></span>My Tasks</a>
+        <a href="pickups.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Pickups & Rescues</a>
+        <a href="proof-of-delivery.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Proof of Delivery</a>
+        <a href="delivery-history.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
     </nav>
 
-    <!-- =================================================================
-         Build this page here. Everything below <main> is a spec, not UI —
-         delete the .spec block and add your own markup.
-         ================================================================= -->
-    <main>
-      <h1>Today</h1>
-      <p class="purpose">The volunteer's single starting point for the day.</p>
+    <main class="fade-in">
+      <header class="page-head">
+        <h1>Good morning, Priya</h1>
+        <p class="lead">Here's what you're doing today, and how close we are to 12:30.</p>
+      </header>
+      
+      <section class="card goal-card">
+        <div class="goal-top">
+          <div>
+            <p class="goal-label">Today's goal</p>
+            <p class="goal-value">250 meals <span>by 12:30 PM</span></p>
+          </div>
+          <span class="goal-clock">12:30</span>
+        </div>
+        <div class="progress"><span style="width:64%"></span></div>
+        <p class="goal-sub"><strong>3</strong> of your tasks remaining · 1h 42m left</p>
+      </section>
 
-      <div class="spec">
-        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
-
-        <h2>Components to build</h2>
-        <ul>
-          <li>Countdown / progress toward the 12:30 deadline</li>
-          <li>Their assigned tasks, colour-coded by task type</li>
-          <li>Shortcut to Log Leftovers</li>
+      <section class="card">
+        <div class="card-head"><h2>Your tasks today</h2><span class="badge azure">Temple kitchen</span></div>
+        <ul class="tasklist">
+          
+          <li class="task cat-prep">
+            <input class="task-check" type="checkbox" id="t1"  aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-prep">Prep</span><span class="task-time">8:30 AM</span></div>
+              <p class="task-title">Cook 250 servings — lemon rice &amp; sambar</p>
+              <p class="task-meta">Sri Venkateswara Temple kitchen</p>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Arrive by 8:15. Ask for Ravi at the kitchen. Rice and dal are already stocked; produce is in the walk-in.</p></details>
+            </div>
+          </li>
+          
+          <li class="task cat-pack">
+            <input class="task-check" type="checkbox" id="t2"  aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-pack">Packing</span><span class="task-time">11:00 AM</span></div>
+              <p class="task-title">Assemble 250 kits: box + water + napkin + utensils</p>
+              <p class="task-meta">Packing Bay B</p>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Kits get stacked on pallet 3 by route number. Water and napkins are on the left shelf.</p></details>
+            </div>
+          </li>
+          
+          <li class="task cat-dist">
+            <input class="task-check" type="checkbox" id="t3"  aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">12:00 PM</span></div>
+              <p class="task-title">Drive Route 2 — Downtown shelter + 2 stops</p>
+              <p class="task-meta">Van #3 · 90 boxes</p>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Load from Bay B dock. Route sheet is in the glovebox. Upload a photo at each stop.</p></details>
+            </div>
+          </li>
         </ul>
+      </section>
 
-        <h2>Actions the user can take</h2>
-        <ul>
-          <li>Mark a task complete</li>
-          <li>Jump to Log Leftovers</li>
-        </ul>
-
-        <h2>Connects to</h2>
-        <p>Tasks link to their detail. Log Leftovers → Pickups & Rescues.</p>
-
-        <h2>Later, if there's time</h2>
-        <ul>
-          <li>Personal impact stat ("meals you helped deliver this week")</li>
-        </ul>
-      </div>
+      <section class="card quick-card">
+        <div>
+          <h3>Found leftover food?</h3>
+          <p class="muted">Rescued something from Costco or Kroger? Log it so the kitchen can plan.</p>
+        </div>
+        <a class="btn btn-primary" href="pickups.html">＋ Log Leftovers</a>
+      </section>
     </main>
   </div>
 

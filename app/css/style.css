@@ -1,168 +1,241 @@
 /* ==========================================================================
-   Food4Lives — shared styles
+   Food4Lives — GLOBAL styles (design system)
 
-   This file only styles the SHELL: the dev bar, top bar, sidebar nav, and the
-   landing page. Page content is intentionally unstyled — add your own rules for
-   your own pages at the bottom of this file.
-
-   Plain CSS. No framework, no build step, no JavaScript.
+   Palette, type, and reusable components for the whole site. Portal-specific
+   layout lives in its own file (e.g. admin.css). Plain CSS, no build step.
    ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap");
 
 :root {
-  --navy: #173a5e;
-  --red: #df2b28;
-  --ink: #1f2933;
-  --grey: #5a6b7b;
-  --line: #dfe3e8;
-  --bg: #f6f7f9;
+  /* brand palette (from the team UI outline) */
+  --navy:  #00146b;   /* main accent — CTAs, headers, titles */
+  --azure: #c6eaff;   /* light complement — dividers, soft fills */
+  --red:   #e6251f;   /* secondary accent — alerts, urgency */
+  --stone: #efeded;   /* page background */
+  --hover: #edf2fa;   /* hover wash */
+
+  /* derived neutrals & semantic (kept on-brand) */
+  --ink:   #1b2340;
+  --muted: #5c6478;
+  --line:  #e3e2e2;
+  --card:  #ffffff;
+  --navy-hover: #001a8c;
+  --ok:    #1f8a55;  --ok-bg:  #e6f3ec;
+  --warn:  #a86711;  --warn-bg:#f7ecd6;
+  --crit:  #e6251f;  --crit-bg:#fde4e3;
+
+  /* shape + motion */
+  --radius:   16px;
+  --radius-sm:10px;
+  --shadow:   0 1px 2px rgba(0,20,107,.04), 0 8px 24px rgba(0,20,107,.07);
+  --shadow-sm:0 1px 2px rgba(0,20,107,.05);
+  --ease: 200ms cubic-bezier(.2,.7,.3,1);
+
+  --font-head: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family: var(--font-body);
   color: var(--ink);
-  background: var(--bg);
-  line-height: 1.5;
+  background: var(--stone);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
+
+h1, h2, h3, h4, .kpi-value, .brand, .btn, .badge, .tag, label, th, .nav-ic + *, .side a {
+  font-family: var(--font-head);
+}
+
+a { color: var(--navy); }
+.link { color: var(--navy); font-family: var(--font-head); font-weight: 600; font-size: 13px; text-decoration: none; }
+.link:hover { text-decoration: underline; }
+.muted { color: var(--muted); font-size: 13px; }
+.num { font-variant-numeric: tabular-nums; }
 
 /* ---------- dev bar (temporary — delete once real auth exists) ---------- */
 .devbar {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 6px 16px;
-  background: #2b2f36;
-  color: #fff;
-  font-size: 12px;
-  flex-wrap: wrap;
+  display: flex; align-items: center; gap: 14px;
+  padding: 6px 16px; background: #10163a; color: #fff;
+  font-family: var(--font-head); font-size: 12px; flex-wrap: wrap;
 }
-.devbar strong {
-  background: var(--red);
-  border-radius: 4px;
-  padding: 1px 7px;
-  letter-spacing: 0.08em;
-}
-.devbar a { color: #cfd6de; text-decoration: none; }
-.devbar a:hover { color: #fff; text-decoration: underline; }
-.devbar-note { margin-left: auto; color: #8b939d; }
+.devbar strong { background: var(--red); border-radius: 5px; padding: 1px 7px; letter-spacing: .08em; }
+.devbar a { color: #b9c2e6; text-decoration: none; }
+.devbar a:hover { color: #fff; }
+.devbar-note { margin-left: auto; color: #6b74a0; }
 
 /* ---------- top bar ---------- */
 .topbar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 12px 20px;
-  background: #fff;
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 22px; background: var(--card);
   border-bottom: 1px solid var(--line);
 }
-.brand { font-size: 19px; font-weight: 700; color: var(--navy); text-decoration: none; }
+.brand { font-size: 20px; font-weight: 700; color: var(--navy); text-decoration: none; letter-spacing: -.01em; }
 .brand span { color: var(--red); }
-.badge {
-  font-size: 13px; font-weight: 600; color: var(--navy);
-  background: #eef2f6; border-radius: 20px; padding: 4px 12px;
-}
-.logout { margin-left: auto; font-size: 14px; color: var(--grey); text-decoration: none; }
+.logout { margin-left: auto; font-family: var(--font-head); font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; }
 .logout:hover { color: var(--red); }
 
-/* ---------- layout ---------- */
+/* ---------- shell + sidebar ---------- */
 .shell { display: flex; align-items: flex-start; }
-
 .side {
-  width: 210px;
-  flex: none;
-  background: #fff;
+  width: 232px; flex: none; background: var(--card);
   border-right: 1px solid var(--line);
-  min-height: calc(100vh - 80px);
-  padding: 14px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  min-height: calc(100vh - 82px);
+  padding: 16px 12px; display: flex; flex-direction: column; gap: 3px;
 }
 .side a {
-  padding: 9px 12px; border-radius: 6px; color: var(--grey);
-  text-decoration: none; font-size: 14px; font-weight: 500;
+  display: flex; align-items: center; gap: 11px;
+  padding: 10px 12px; border-radius: var(--radius-sm);
+  color: var(--muted); text-decoration: none;
+  font-size: 14px; font-weight: 500; transition: background var(--ease), color var(--ease);
 }
-.side a:hover { background: var(--bg); color: var(--ink); }
-.side a.active { background: #fdecec; color: var(--navy); font-weight: 700; }
+.side a:hover { background: var(--hover); color: var(--ink); }
+.side a.active { background: var(--navy); color: #fff; font-weight: 600; }
+.nav-ic { display: inline-flex; width: 18px; height: 18px; }
+.nav-ic svg { width: 18px; height: 18px; }
 
-main { padding: 24px 28px; max-width: 900px; flex: 1; }
+/* ---------- main + page head ---------- */
+main { padding: 26px 30px 56px; max-width: 1120px; flex: 1; }
+.page-head { margin-bottom: 22px; }
+h1 { margin: 0; font-size: 26px; font-weight: 700; color: var(--navy); letter-spacing: -.02em; }
+.lead { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
 
-h1 { margin: 0 0 4px; font-size: 25px; color: var(--navy); }
-.purpose { margin: 0 0 20px; font-size: 15px; color: var(--grey); }
+/* ---------- card ---------- */
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 20px 22px; margin-bottom: 18px;
+}
+.card h2 { margin: 0 0 14px; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.card h3 { margin: 0 0 8px; font-size: 15px; font-weight: 600; }
+.card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.card-head h2, .card-head h3 { margin: 0; }
 
-/* ---------- the spec block (delete this from a page once you build it) ------
-   Deliberately plain so it doesn't look like finished UI.
-   -------------------------------------------------------------------------- */
-.spec {
-  border: 1px dashed var(--line);
-  border-radius: 8px;
-  padding: 16px 20px;
-  background: #fff;
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px 16px; border: 1px solid transparent; border-radius: var(--radius-sm);
+  font-size: 13.5px; font-weight: 600; cursor: pointer; text-decoration: none;
+  transition: transform var(--ease), box-shadow var(--ease), background var(--ease), border-color var(--ease);
 }
-.spec-note {
-  margin: 0 0 16px;
-  font-size: 13px;
-  color: var(--grey);
-  font-style: italic;
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary { background: var(--navy); color: #fff; box-shadow: var(--shadow-sm); }
+.btn-primary:hover { background: var(--navy-hover); box-shadow: var(--shadow); }
+.btn-danger { background: var(--red); color: #fff; }
+.btn-ghost { background: var(--card); border-color: var(--line); color: var(--ink); }
+.btn-ghost:hover { background: var(--hover); border-color: var(--azure); }
+.btn-sm { padding: 7px 12px; font-size: 12.5px; }
+
+/* ---------- badges / pills ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; background: var(--stone); color: var(--muted);
 }
-.spec h2 {
-  margin: 18px 0 6px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--grey);
+.badge svg { width: 13px; height: 13px; }
+.badge.ok    { background: var(--ok-bg);   color: var(--ok); }
+.badge.warn  { background: var(--warn-bg); color: var(--warn); }
+.badge.crit  { background: var(--crit-bg); color: var(--crit); }
+.badge.info  { background: #e7ecff;        color: var(--navy); }
+.badge.azure { background: var(--azure);   color: var(--navy); }
+.badge.pickup{ background: var(--azure);   color: var(--navy); }
+
+/* ---------- form fields ---------- */
+.field { display: block; margin-bottom: 14px; }
+.field > span, label > span { display: block; font-size: 12.5px; font-weight: 600; color: var(--muted); margin-bottom: 5px; }
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"],
+input[type="password"], input[type="time"], input[type="file"], select, textarea {
+  width: 100%; padding: 9px 12px; border: 1px solid var(--line);
+  border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 14px;
+  background: var(--card); color: var(--ink); transition: border-color var(--ease), box-shadow var(--ease);
 }
+input:focus, select:focus, textarea:focus {
+  outline: none; border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(0,20,107,.12);
+}
+textarea { resize: vertical; }
+
+/* ---------- checkbox groups (sign-up, filters) ---------- */
+fieldset { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 14px; margin: 0 0 14px; }
+fieldset legend { padding: 0 6px; font-family: var(--font-head); font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.check { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 14px; margin: 0 16px 8px 0; cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--navy); }
+
+/* ---------- progress bar (reusable) ---------- */
+.progress { height: 9px; background: var(--line); border-radius: 999px; overflow: hidden; }
+.progress > span { display: block; height: 100%; background: var(--red); border-radius: 999px; transition: width var(--ease); }
+
+/* ---------- task-type tags (site-wide four categories) ---------- */
+.tag {
+  flex: none; display: inline-block; font-size: 10.5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px;
+}
+.t-source { background: #e7ecff; color: var(--navy); }
+.t-prep   { background: var(--warn-bg); color: var(--warn); }
+.t-pack   { background: var(--azure); color: var(--navy); }
+.t-dist   { background: var(--crit-bg); color: var(--crit); }
+
+/* ---------- tables ---------- */
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.table th {
+  text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); font-weight: 600; padding: 9px 12px; border-bottom: 1px solid var(--line); white-space: nowrap;
+}
+.table td { padding: 11px 12px; border-bottom: 1px solid var(--line); }
+.table tbody tr { transition: background var(--ease); }
+.table tbody tr:hover { background: var(--hover); }
+.table tr:last-child td { border-bottom: 0; }
+
+/* ---------- landing ---------- */
+.landing-body { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+.landing {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 34px; width: 100%; max-width: 360px; text-align: center;
+}
+.landing-logo { margin: 0 0 4px; font-size: 32px; font-weight: 700; color: var(--navy); }
+.landing-logo span { color: var(--red); }
+.tagline { margin: 0 0 24px; color: var(--muted); font-size: 15px; }
+.dev-panel { border: 1px dashed var(--red); border-radius: var(--radius-sm); padding: 16px; background: #fff7f7; text-align: left; }
+.dev-title { margin: 0 0 12px; font-family: var(--font-head); font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--red); }
+.dev-title span { font-weight: 500; letter-spacing: 0; color: var(--muted); text-transform: none; }
+.dev-links { display: flex; flex-direction: column; gap: 8px; }
+.dev-links a {
+  display: block; padding: 11px; background: var(--navy); color: #fff; border-radius: var(--radius-sm);
+  text-decoration: none; font-family: var(--font-head); font-weight: 600; font-size: 13.5px; text-align: center;
+  transition: background var(--ease), transform var(--ease);
+}
+.dev-links a:hover { background: var(--navy-hover); transform: translateY(-1px); }
+.dev-note { margin: 12px 0 0; font-size: 11px; color: var(--muted); }
+.signup-links { margin: 20px 0 0; font-size: 13px; color: var(--muted); }
+.signup-links a { color: var(--red); font-family: var(--font-head); font-weight: 600; }
+
+/* ---------- empty-page spec block (used by unbuilt portals) ---------- */
+.spec { border: 1px dashed var(--line); border-radius: var(--radius); padding: 18px 22px; background: var(--card); }
+.spec-note { margin: 0 0 16px; font-size: 13px; color: var(--muted); font-style: italic; }
+.spec h2 { margin: 18px 0 6px; font-family: var(--font-head); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 .spec h2:first-of-type { margin-top: 0; }
 .spec ul { margin: 0; padding-left: 20px; font-size: 14px; }
 .spec li { margin-bottom: 4px; }
 .spec p { font-size: 14px; margin: 0; }
 
-/* ---------- landing ---------- */
-.landing-body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-.landing {
-  background: #fff; border: 1px solid var(--line); border-radius: 12px;
-  padding: 32px; width: 100%; max-width: 340px; text-align: center;
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .btn:hover, .dev-links a:hover { transform: none; }
 }
-.landing-logo { margin: 0 0 4px; font-size: 30px; color: var(--navy); }
-.landing-logo span { color: var(--red); }
-.tagline { margin: 0 0 22px; color: var(--grey); font-size: 14px; }
 
-.dev-panel {
-  border: 1px dashed var(--red); border-radius: 8px;
-  padding: 14px; background: #fffafa; text-align: left;
-}
-.dev-title {
-  margin: 0 0 10px; font-size: 12px; font-weight: 700;
-  letter-spacing: 0.08em; color: var(--red);
-}
-.dev-title span { font-weight: 500; letter-spacing: 0; color: var(--grey); text-transform: none; }
-.dev-links { display: flex; flex-direction: column; gap: 6px; }
-.dev-links a {
-  display: block; padding: 9px; background: var(--navy); color: #fff;
-  border-radius: 6px; text-decoration: none; font-weight: 600;
-  font-size: 13px; text-align: center;
-}
-.dev-links a:hover { background: #22507f; }
-.dev-note { margin: 10px 0 0; font-size: 11px; color: var(--grey); }
-
-.signup-links { margin: 18px 0 0; font-size: 13px; color: var(--grey); }
-.signup-links a { color: var(--red); }
-
-/* ---------- small screens ---------- */
-@media (max-width: 760px) {
+/* ---------- responsive shell ---------- */
+@media (max-width: 820px) {
   .shell { flex-direction: column; }
   .side {
-    width: 100%; min-height: 0; flex-direction: row;
-    overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line);
+    width: 100%; min-height: 0; flex-direction: row; overflow-x: auto;
+    border-right: 0; border-bottom: 1px solid var(--line); padding: 10px;
   }
   .side a { white-space: nowrap; }
-  main { padding: 18px; }
-  .devbar-note { display: none; }
+  main { padding: 20px 16px 40px; }
 }
-
-/* ==========================================================================
-   YOUR STYLES — add below. Prefix or namespace them so we don't collide,
-   e.g. .volunteer-taskcard, .admin-kpi, .partner-calendar
-   ========================================================================== */
