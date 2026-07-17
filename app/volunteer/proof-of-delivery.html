@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Proof of Delivery — Volunteer Portal | Food4Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/volunteer.css">
 </head>
 <body>
 
@@ -20,49 +24,82 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge">Volunteer Portal</span>
+    <span class="badge azure">Volunteer Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
   <div class="shell">
     <nav class="side">
-      <a href="today.html">Today</a>
-      <a href="my-tasks.html">My Tasks</a>
-      <a href="pickups.html">Pickups & Rescues</a>
-      <a href="proof-of-delivery.html" class="active">Proof of Delivery</a>
+        <a href="today.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Today</a>
+        <a href="my-tasks.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3.5 6h.01"/><path d="M3.5 12h.01"/><path d="M3.5 18h.01"/></svg></span>My Tasks</a>
+        <a href="pickups.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Pickups & Rescues</a>
+        <a href="proof-of-delivery.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Proof of Delivery</a>
+        <a href="delivery-history.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
     </nav>
 
-    <!-- =================================================================
-         Build this page here. Everything below <main> is a spec, not UI —
-         delete the .spec block and add your own markup.
-         ================================================================= -->
-    <main>
-      <h1>Proof of Delivery</h1>
-      <p class="purpose">Close the loop on a drop-off with evidence.</p>
+    <main class="fade-in">
+      <header class="page-head">
+        <h1>Proof of Delivery</h1>
+        <p class="lead">After each drop-off, upload a photo. It feeds the daily impact feed.</p>
+      </header>
+      
+      <div class="v-grid">
+        <section class="card proof-card">
+          <div class="card-head"><span class="badge crit"><span class="pulse-dot"></span> Route 2 · Stop 1 of 3</span></div>
+          <h2>Downtown Shelter</h2>
+          <p class="muted">421 Market St · assigned 90 boxes</p>
+          <form onsubmit="return false;">
+            <label class="field"><span>Drop-off location</span>
+              <select><option>Downtown Shelter — 421 Market St</option><option>Riverside Encampment</option><option>Eastside Motel</option></select>
+            </label>
+            <label class="field"><span>Number of boxes delivered</span>
+              <input type="number" value="90" inputmode="numeric">
+            </label>
+            <label class="field"><span>Proof photo</span>
+              <input type="file" accept="image/*" capture="environment">
+            </label>
+            <label class="field"><span>Completion time</span>
+              <input type="time" value="12:34">
+            </label>
+            <button class="btn btn-primary" type="submit">Mark stop complete</button>
+          </form>
+        </section>
 
-      <div class="spec">
-        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
-
-        <h2>Components to build</h2>
-        <ul>
-          <li>Current stop details (site, box count)</li>
-          <li>Photo upload</li>
-          <li>Boxes delivered + drop-off time fields</li>
-        </ul>
-
-        <h2>Actions the user can take</h2>
-        <ul>
-          <li>Upload a proof photo and mark the stop complete</li>
-        </ul>
-
-        <h2>Connects to</h2>
-        <p>Photos flow to the Admin Console's Media Queue.</p>
-
-        <h2>Later, if there's time</h2>
-        <ul>
-          <li>Multi-stop route progress</li>
-          <li>GPS / auto-timestamp</li>
-        </ul>
+        <section class="card">
+          <div class="card-head"><h2>Today's route</h2><span class="muted">1 of 3 done</span></div>
+          <ul class="tasklist">
+            
+          <li class="task cat-dist">
+            <input class="task-check" type="checkbox" id="s1" checked aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">12:34 PM · photo ✓</span></div>
+              <p class="task-title">Stop 1 — Downtown Shelter (90 boxes)</p>
+              <p class="task-meta">421 Market St</p>
+              
+            </div>
+          </li>
+            
+          <li class="task cat-dist">
+            <input class="task-check" type="checkbox" id="s2"  aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">pending</span></div>
+              <p class="task-title">Stop 2 — Riverside Encampment (60 boxes)</p>
+              <p class="task-meta">Under 5th St bridge</p>
+              
+            </div>
+          </li>
+            
+          <li class="task cat-dist">
+            <input class="task-check" type="checkbox" id="s3"  aria-label="Mark complete">
+            <div class="task-main">
+              <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">pending</span></div>
+              <p class="task-title">Stop 3 — Eastside Motel (40 boxes)</p>
+              <p class="task-meta">902 East Ave</p>
+              
+            </div>
+          </li>
+          </ul>
+        </section>
       </div>
     </main>
   </div>

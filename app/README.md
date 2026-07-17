@@ -31,9 +31,10 @@ between portals.
 app/
   index.html          Landing + DEV ENTER
   css/style.css       GLOBAL design system — tokens + reusable components
-  css/admin.css       Admin Console layout (example of a per-portal stylesheet)
-  signup/             Volunteer + organization sign-up   (scaffold)
-  volunteer/          Volunteer Portal (4 pages)         (scaffold)
+  css/admin.css       Admin Console layout
+  css/volunteer.css   Volunteer Portal layout (mobile-first)
+  signup/             volunteer.html BUILT · organization.html scaffold
+  volunteer/          Volunteer Portal (5 pages)         BUILT
   admin/              Admin Console (5 pages)            BUILT
   partner/            Partner Portal (4 pages)           (scaffold)
 ```

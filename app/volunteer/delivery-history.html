@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delivery History — Volunteer Portal | Food4Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/volunteer.css">
+</head>
+<body>
+
+  <div class="devbar">
+    <strong>DEV</strong>
+    <a href="../volunteer/today.html">Volunteer</a>
+    <a href="../admin/command-center.html">Admin</a>
+    <a href="../partner/overview.html">Partner</a>
+    <a href="../signup/volunteer.html">Sign-up</a>
+    <a href="../index.html">Landing</a>
+    <span class="devbar-note">sign-in bypassed — no backend</span>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
+    <span class="badge azure">Volunteer Portal</span>
+    <a class="logout" href="../index.html">Log out</a>
+  </header>
+
+  <div class="shell">
+    <nav class="side">
+        <a href="today.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Today</a>
+        <a href="my-tasks.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3.5 6h.01"/><path d="M3.5 12h.01"/><path d="M3.5 18h.01"/></svg></span>My Tasks</a>
+        <a href="pickups.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Pickups & Rescues</a>
+        <a href="proof-of-delivery.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Proof of Delivery</a>
+        <a href="delivery-history.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
+    </nav>
+
+    <main class="fade-in">
+      <header class="page-head">
+        <h1>Delivery History</h1>
+        <p class="lead">Every delivery you've completed, with routes and meals delivered.</p>
+      </header>
+      
+      <div class="kpi-row">
+        <div class="stat card"><p class="stat-value">1,240</p><p class="stat-label">Meals delivered</p></div>
+        <div class="stat card"><p class="stat-value">18</p><p class="stat-label">Routes driven</p></div>
+        <div class="stat card"><p class="stat-value">96%</p><p class="stat-label">On-time</p></div>
+      </div>
+
+      <section class="card">
+        <div class="card-head"><h2>Past deliveries</h2></div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Date</th><th>Route</th><th>Boxes</th><th>Meals delivered</th><th>Drop-off time</th></tr></thead>
+            <tbody>
+              <tr><td>Jul 7</td><td>Route 2 · Downtown</td><td class="num">90</td><td class="num">90</td><td class="num">12:34 PM</td></tr>
+              <tr><td>Jul 5</td><td>Route 1 · East side</td><td class="num">100</td><td class="num">100</td><td class="num">12:28 PM</td></tr>
+              <tr><td>Jul 3</td><td>Route 2 · Downtown</td><td class="num">85</td><td class="num">85</td><td class="num">12:41 PM</td></tr>
+              <tr><td>Jul 1</td><td>Route 3 · Riverside</td><td class="num">60</td><td class="num">60</td><td class="num">12:30 PM</td></tr>
+              <tr><td>Jun 28</td><td>Route 2 · Downtown</td><td class="num">90</td><td class="num">90</td><td class="num">12:36 PM</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

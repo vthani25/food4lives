@@ -159,6 +159,26 @@ input:focus, select:focus, textarea:focus {
 }
 textarea { resize: vertical; }
 
+/* ---------- checkbox groups (sign-up, filters) ---------- */
+fieldset { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 14px; margin: 0 0 14px; }
+fieldset legend { padding: 0 6px; font-family: var(--font-head); font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.check { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 14px; margin: 0 16px 8px 0; cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--navy); }
+
+/* ---------- progress bar (reusable) ---------- */
+.progress { height: 9px; background: var(--line); border-radius: 999px; overflow: hidden; }
+.progress > span { display: block; height: 100%; background: var(--red); border-radius: 999px; transition: width var(--ease); }
+
+/* ---------- task-type tags (site-wide four categories) ---------- */
+.tag {
+  flex: none; display: inline-block; font-size: 10.5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px;
+}
+.t-source { background: #e7ecff; color: var(--navy); }
+.t-prep   { background: var(--warn-bg); color: var(--warn); }
+.t-pack   { background: var(--azure); color: var(--navy); }
+.t-dist   { background: var(--crit-bg); color: var(--crit); }
+
 /* ---------- tables ---------- */
 .table-wrap { overflow-x: auto; }
 .table { width: 100%; border-collapse: collapse; font-size: 13.5px; }

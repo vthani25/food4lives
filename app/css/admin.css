@@ -45,8 +45,7 @@
 .deadline-top { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 8px; }
 .deadline-top strong { font-family: var(--font-head); }
 .deadline-left { opacity: .9; font-variant-numeric: tabular-nums; }
-.progress { height: 9px; background: rgba(255,255,255,.22); border-radius: 999px; overflow: hidden; }
-.progress span { display: block; height: 100%; background: var(--red); border-radius: 999px; transition: width var(--ease); }
+.deadline .progress { background: rgba(255,255,255,.22); }
 .deadline-steps { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; font-size: 12.5px; }
 .deadline-steps .done { opacity: .95; } .deadline-steps .active { opacity: .95; } .deadline-steps .todo { opacity: .65; }
 
@@ -57,16 +56,6 @@
 .pipe-body { flex: 1; min-width: 0; }
 .pipe-title { margin: 0; font-family: var(--font-head); font-weight: 600; font-size: 14px; }
 .pipe-meta { margin: 1px 0 0; font-size: 12.5px; color: var(--muted); }
-
-/* ---------- task-type tags ---------- */
-.tag {
-  flex: none; font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
-  padding: 3px 9px; border-radius: 999px;
-}
-.t-source { background: #e7ecff; color: var(--navy); }
-.t-prep   { background: var(--warn-bg); color: var(--warn); }
-.t-pack   { background: var(--azure); color: var(--navy); }
-.t-dist   { background: var(--crit-bg); color: var(--crit); }
 
 /* ---------- alert cards ---------- */
 .alert-card { border-left: 4px solid var(--red); }
