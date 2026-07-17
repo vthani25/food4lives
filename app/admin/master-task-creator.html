@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Master Task Creator — Admin Console | Food4Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
 
@@ -20,55 +24,76 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge">Admin Console</span>
+    <span class="badge azure">Admin Console</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
   <div class="shell">
     <nav class="side">
-      <a href="command-center.html">Command Center</a>
-      <a href="master-task-creator.html" class="active">Master Task Creator</a>
-      <a href="supply.html">Supply & Inventory</a>
-      <a href="roster.html">Roster</a>
-      <a href="media-queue.html">Media Queue</a>
+        <a href="command-center.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M13.4 10.6 19 5"/><path d="M4 20a9 9 0 1 1 16 0"/></svg></span>Command Center</a>
+        <a href="master-task-creator.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.6"/></svg></span>Master Task Creator</a>
+        <a href="supply.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Supply & Inventory</a>
+        <a href="roster.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/><path d="M21 20v-1a4 4 0 0 0-3-3.8"/></svg></span>Roster</a>
+        <a href="media-queue.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Media Queue</a>
     </nav>
 
-    <!-- =================================================================
-         Build this page here. Everything below <main> is a spec, not UI —
-         delete the .spec block and add your own markup.
-         ================================================================= -->
-    <main>
-      <h1>Master Task Creator</h1>
-      <p class="purpose">Turn one macro goal into the day's assigned work. This page owns all task creation and assignment.</p>
+    <main class="fade-in">
+      <header class="page-head">
+        <h1>Master Task Creator</h1>
+        <p class="lead">Set one macro goal. It splits into the four tasks — you just assign people.</p>
+      </header>
 
-      <div class="spec">
-        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
+      <section class="card">
+        <form class="macro" onsubmit="return false;">
+          <label>Deliver</label>
+          <input class="macro-num" type="number" value="250" aria-label="Number of boxes">
+          <label>boxes by</label>
+          <input type="time" value="12:30">
+          <span class="macro-date badge azure">Tue · Jul 8</span>
+          <button class="btn btn-primary" type="submit">↻ Generate split</button>
+        </form>
 
-        <h2>Components to build</h2>
-        <ul>
-          <li>Macro goal input (e.g. 250 boxes by 12:30)</li>
-          <li>Auto-split into the four task types</li>
-          <li>Per-task assignment picker, drawing from the Roster</li>
-          <li>Kitchen selector (F4L facility / temple / volunteer house)</li>
-        </ul>
+        <div class="split-grid">
+          <article class="split-card">
+            <h3 class="split-head t-source">Sourcing</h3>
+            <p>Confirm rice, produce &amp; raw materials for 250 servings.</p>
+            <p class="split-meta">Auto-pulled: temple pickup + Costco rescue</p>
+            <div class="assignees"><span class="avatar ">RS</span><button class="chip-add">＋ Assign</button></div>
+          </article>
 
-        <h2>Actions the user can take</h2>
-        <ul>
-          <li>Set the goal and generate the split</li>
-          <li>Assign / reassign people per task</li>
-          <li>Publish tasks to volunteers</li>
-        </ul>
+          <article class="split-card">
+            <h3 class="split-head t-prep">Prep</h3>
+            <p>Cook 250 servings at the assigned kitchen.</p>
+            <label class="field">
+              <span>Kitchen</span>
+              <select><option>Sri Venkateswara Temple</option><option>Food4Lives facility</option><option>Volunteer house</option></select>
+            </label>
+            <div class="assignees"><span class="avatar ">PR</span><span class="avatar ">MG</span><span class="avatar more">+4</span><button class="chip-add">＋ Assign</button></div>
+          </article>
 
-        <h2>Connects to</h2>
-        <p>Pulls people from Roster. Publishes into the Volunteer Portal.</p>
+          <article class="split-card">
+            <h3 class="split-head t-pack">Packing</h3>
+            <p>Assemble 250 kits.</p>
+            <label class="field kit">
+              <span>Kit contents</span>
+              <input type="text" value="Box + water + napkins + utensils">
+            </label>
+            <div class="assignees"><span class="avatar ">AK</span><span class="avatar more">+3</span><button class="chip-add">＋ Assign</button></div>
+          </article>
 
-        <h2>Later, if there's time</h2>
-        <ul>
-          <li>Editable kit contents</li>
-          <li>Save/reuse a split as a template</li>
-          <li>Drag-and-drop reassignment</li>
-        </ul>
-      </div>
+          <article class="split-card">
+            <h3 class="split-head t-dist">Distribution</h3>
+            <p>Transport finished kits to 6 drop sites.</p>
+            <p class="split-meta">4 routes · Route 4 unassigned</p>
+            <div class="assignees"><span class="avatar azure">HH</span><span class="avatar empty">?</span><button class="chip-add">＋ Assign</button></div>
+          </article>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary">Publish tasks to volunteers</button>
+          <button class="btn btn-ghost">Save as template</button>
+        </div>
+      </section>
     </main>
   </div>
 

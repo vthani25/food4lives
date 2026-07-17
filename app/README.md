@@ -30,14 +30,32 @@ between portals.
 ```
 app/
   index.html          Landing + DEV ENTER
-  css/style.css       Shell styles only (dev bar, top bar, sidebar, landing)
-  signup/             Volunteer + organization sign-up
-  volunteer/          Volunteer Portal (4 pages)
-  admin/              Admin Console (5 pages)
-  partner/            Partner Portal (4 pages)
+  css/style.css       GLOBAL design system — tokens + reusable components
+  css/admin.css       Admin Console layout (example of a per-portal stylesheet)
+  signup/             Volunteer + organization sign-up   (scaffold)
+  volunteer/          Volunteer Portal (4 pages)         (scaffold)
+  admin/              Admin Console (5 pages)            BUILT
+  partner/            Partner Portal (4 pages)           (scaffold)
 ```
 
 Navigation is ordinary `<a href>` links.
+
+## Design system (use these — they're global)
+
+`css/style.css` implements the team UI outline. Build with these tokens and classes
+so the whole site matches:
+
+- **Colors** (CSS variables): `--navy #00146b`, `--azure #c6eaff`, `--red #e6251f`,
+  `--stone #efeded` (page bg), `--hover #edf2fa`.
+- **Fonts**: headings/labels/buttons use **Poppins** (`--font-head`); body text uses
+  **Source Serif 4** (`--font-body`). Loaded from Google Fonts in `style.css`.
+- **Shape/motion**: `--radius` (16px), `--shadow` (soft elevation), `--ease` (gentle transition).
+- **Reusable components**: `.btn` / `.btn-primary` / `.btn-ghost` / `.btn-sm`,
+  `.card` + `.card-head`, `.badge` (`.ok` `.warn` `.crit` `.info` `.azure`),
+  `.field` inputs/selects/textareas, `.table`.
+
+The **Admin Console** is a worked example of these classes in action — copy patterns
+from `admin/*.html` and `css/admin.css`.
 
 ## How to split the work
 
@@ -57,8 +75,10 @@ what the user can do, what it connects to, and what's optional. It's a note to y
 not UI.
 
 1. Delete the `<div class="spec">...</div>` block.
-2. Add your own markup inside `<main>`.
-3. Add your CSS at the bottom of `css/style.css`, namespaced (e.g. `.admin-kpi`).
+2. Add your own markup inside `<main>`, reusing the design-system classes above.
+3. For portal-specific layout, add your own stylesheet (like `css/admin.css`) and
+   link it in your pages — don't pile portal-specific rules into the shared
+   `style.css`. Namespace new classes (e.g. `.volunteer-taskcard`).
 
 Keep the dev bar, topbar, and `.side` nav as they are so every page stays consistent.
 
