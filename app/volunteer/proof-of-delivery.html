@@ -24,7 +24,7 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge azure">Volunteer Portal</span>
+    <span class="badge info">Volunteer Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
@@ -37,31 +37,25 @@
         <a href="delivery-history.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
     </nav>
 
-    <main class="fade-in">
-      <header class="page-head">
+    <main>
+      <div class="page-head">
         <h1>Proof of Delivery</h1>
         <p class="lead">After each drop-off, upload a photo. It feeds the daily impact feed.</p>
-      </header>
-      
+      </div>
+
       <div class="v-grid">
-        <section class="card proof-card">
-          <div class="card-head"><span class="badge crit"><span class="pulse-dot"></span> Route 2 · Stop 1 of 3</span></div>
-          <h2>Downtown Shelter</h2>
+        <section class="card">
+          <div class="proof-media"><img src="../img/photo-a.svg" alt="Downtown Shelter drop-off point"></div>
+          <span class="badge crit">Route 2 · Stop 1 of 3</span>
+          <h2 style="margin:10px 0 2px;font-size:18px;color:var(--blue-800)">Downtown Shelter</h2>
           <p class="muted">421 Market St · assigned 90 boxes</p>
-          <form onsubmit="return false;">
+          <form onsubmit="return false;" style="margin-top:14px">
             <label class="field"><span>Drop-off location</span>
-              <select><option>Downtown Shelter — 421 Market St</option><option>Riverside Encampment</option><option>Eastside Motel</option></select>
-            </label>
-            <label class="field"><span>Number of boxes delivered</span>
-              <input type="number" value="90" inputmode="numeric">
-            </label>
-            <label class="field"><span>Proof photo</span>
-              <input type="file" accept="image/*" capture="environment">
-            </label>
-            <label class="field"><span>Completion time</span>
-              <input type="time" value="12:34">
-            </label>
-            <button class="btn btn-primary" type="submit">Mark stop complete</button>
+              <select><option>Downtown Shelter — 421 Market St</option><option>Riverside Encampment</option><option>Eastside Motel</option></select></label>
+            <label class="field"><span>Number of boxes delivered</span><input type="number" value="90" inputmode="numeric"></label>
+            <label class="field"><span>Proof photo</span><input type="file" accept="image/*" capture="environment"></label>
+            <label class="field"><span>Completion time</span><input type="time" value="12:34"></label>
+            <button class="btn btn-primary btn-block" type="submit">Mark stop complete</button>
           </form>
         </section>
 
@@ -71,6 +65,7 @@
             
           <li class="task cat-dist">
             <input class="task-check" type="checkbox" id="s1" checked aria-label="Mark complete">
+            <img class="task-thumb" src="../img/photo-a.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">12:34 PM · photo ✓</span></div>
               <p class="task-title">Stop 1 — Downtown Shelter (90 boxes)</p>
@@ -80,7 +75,8 @@
           </li>
             
           <li class="task cat-dist">
-            <input class="task-check" type="checkbox" id="s2"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="s2" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/photo-b.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">pending</span></div>
               <p class="task-title">Stop 2 — Riverside Encampment (60 boxes)</p>
@@ -90,7 +86,8 @@
           </li>
             
           <li class="task cat-dist">
-            <input class="task-check" type="checkbox" id="s3"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="s3" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/photo-c.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">pending</span></div>
               <p class="task-title">Stop 3 — Eastside Motel (40 boxes)</p>
@@ -104,5 +101,6 @@
     </main>
   </div>
 
+  <script src="../js/ui.js"></script>
 </body>
 </html>

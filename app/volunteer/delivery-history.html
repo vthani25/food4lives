@@ -24,7 +24,7 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge azure">Volunteer Portal</span>
+    <span class="badge info">Volunteer Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
@@ -37,16 +37,16 @@
         <a href="delivery-history.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
     </nav>
 
-    <main class="fade-in">
-      <header class="page-head">
+    <main>
+      <div class="page-head">
         <h1>Delivery History</h1>
         <p class="lead">Every delivery you've completed, with routes and meals delivered.</p>
-      </header>
-      
-      <div class="kpi-row">
-        <div class="stat card"><p class="stat-value">1,240</p><p class="stat-label">Meals delivered</p></div>
-        <div class="stat card"><p class="stat-value">18</p><p class="stat-label">Routes driven</p></div>
-        <div class="stat card"><p class="stat-value">96%</p><p class="stat-label">On-time</p></div>
+      </div>
+
+      <div class="stat-row">
+        <div class="card stat"><p class="stat-value">1,240</p><p class="stat-label">Meals delivered</p></div>
+        <div class="card stat"><p class="stat-value">18</p><p class="stat-label">Routes driven</p></div>
+        <div class="card stat"><p class="stat-value">96%</p><p class="stat-label">On-time</p></div>
       </div>
 
       <section class="card">
@@ -55,11 +55,11 @@
           <table class="table">
             <thead><tr><th>Date</th><th>Route</th><th>Boxes</th><th>Meals delivered</th><th>Drop-off time</th></tr></thead>
             <tbody>
-              <tr><td>Jul 7</td><td>Route 2 · Downtown</td><td class="num">90</td><td class="num">90</td><td class="num">12:34 PM</td></tr>
-              <tr><td>Jul 5</td><td>Route 1 · East side</td><td class="num">100</td><td class="num">100</td><td class="num">12:28 PM</td></tr>
-              <tr><td>Jul 3</td><td>Route 2 · Downtown</td><td class="num">85</td><td class="num">85</td><td class="num">12:41 PM</td></tr>
-              <tr><td>Jul 1</td><td>Route 3 · Riverside</td><td class="num">60</td><td class="num">60</td><td class="num">12:30 PM</td></tr>
-              <tr><td>Jun 28</td><td>Route 2 · Downtown</td><td class="num">90</td><td class="num">90</td><td class="num">12:36 PM</td></tr>
+              <tr><td>Jul 18</td><td>Route 2 · Downtown</td><td class="num">90</td><td class="num">90</td><td class="num">12:34 PM</td></tr>
+              <tr><td>Jul 15</td><td>Route 1 · East side</td><td class="num">100</td><td class="num">100</td><td class="num">12:28 PM</td></tr>
+              <tr><td>Jul 12</td><td>Route 2 · Downtown</td><td class="num">85</td><td class="num">85</td><td class="num">12:41 PM</td></tr>
+              <tr><td>Jul 9</td><td>Route 3 · Riverside</td><td class="num">60</td><td class="num">60</td><td class="num">12:30 PM</td></tr>
+              <tr><td>Jul 5</td><td>Route 2 · Downtown</td><td class="num">90</td><td class="num">90</td><td class="num">12:36 PM</td></tr>
             </tbody>
           </table>
         </div>
@@ -67,5 +67,6 @@
     </main>
   </div>
 
+  <script src="../js/ui.js"></script>
 </body>
 </html>

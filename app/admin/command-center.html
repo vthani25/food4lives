@@ -24,7 +24,7 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge azure">Admin Console</span>
+    <span class="badge info">Admin Console</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
@@ -33,75 +33,31 @@
         <a href="command-center.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M13.4 10.6 19 5"/><path d="M4 20a9 9 0 1 1 16 0"/></svg></span>Command Center</a>
         <a href="master-task-creator.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.6"/></svg></span>Master Task Creator</a>
         <a href="supply.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Supply & Inventory</a>
-        <a href="roster.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/><path d="M21 20v-1a4 4 0 0 0-3-3.8"/></svg></span>Roster</a>
+        <a href="roster.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/></svg></span>Roster</a>
         <a href="media-queue.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Media Queue</a>
     </nav>
 
-    <main class="fade-in">
-      <header class="page-head">
+    <main>
+      <div class="page-head">
         <h1>Command Center</h1>
-        <p class="lead">Tuesday, July 8 — the whole day at a glance, pointed at 12:30.</p>
-      </header>
+        <p class="lead">The whole day in one place, pointed at the 12:30 deadline.</p>
+      </div>
 
-      
-      <section class="deadline card">
-        <div class="deadline-clock">
-          <span class="deadline-label">Today's deadline</span>
-          <span class="deadline-time">12:30<small>PM</small></span>
-        </div>
-        <div class="deadline-track">
-          <div class="deadline-top">
-            <span><strong>160</strong> of 250 kits packed</span>
-            <span class="deadline-left">1h 42m left</span>
-          </div>
+      <section class="today">
+        <div class="today-media"><img src="../img/kitchen.svg" alt="Volunteers serving meals from the community kitchen"></div>
+        <div class="today-body">
+          <p class="today-eyebrow">Sunday, July 19</p>
+          <h2 class="today-title">250 meals <span>by 12:30 PM</span></h2>
           <div class="progress"><span style="width:64%"></span></div>
-          <div class="deadline-steps">
-            <span class="done">✓ Sourcing secured</span>
-            <span class="active">● Prep in progress</span>
-            <span class="active">● Packing 160/250</span>
-            <span class="todo">○ Route 4 open</span>
+          <p class="today-sub">160 of 250 kits packed · 1h 42m left</p>
+          <div class="metrics">
+            <div class="metric"><b>250</b><span>Target</span></div>
+            <div class="metric"><b>160</b><span>Packed</span></div>
+            <div class="metric flag"><b>5 / 6</b><span>Drivers</span></div>
+            <div class="metric"><b>Secured</b><span>Ingredients</span></div>
           </div>
         </div>
       </section>
-
-      <div class="kpi-grid">
-        
-        <article class="kpi">
-          <span class="kpi-icon "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>
-          <div>
-            <p class="kpi-label">Target today</p>
-            <p class="kpi-value">250</p>
-            <p class="kpi-sub">boxes to deliver</p>
-          </div>
-        </article>
-        
-        <article class="kpi">
-          <span class="kpi-icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <div>
-            <p class="kpi-label">Kits packed</p>
-            <p class="kpi-value">160</p>
-            <p class="kpi-sub">64% complete</p>
-          </div>
-        </article>
-        
-        <article class="kpi">
-          <span class="kpi-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></span>
-          <div>
-            <p class="kpi-label">Drivers assigned</p>
-            <p class="kpi-value">5 / 6</p>
-            <p class="kpi-sub">1 route still open</p>
-          </div>
-        </article>
-        
-        <article class="kpi">
-          <span class="kpi-icon ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20C4 10 12 4 20 4c0 8-6 16-16 16z"/><path d="M4 20c4-6 8-8 12-9"/></svg></span>
-          <div>
-            <p class="kpi-label">Ingredients</p>
-            <p class="kpi-value">Secured</p>
-            <p class="kpi-sub">temple + Costco</p>
-          </div>
-        </article>
-      </div>
 
       <div class="grid-2">
         <section class="card">
@@ -113,60 +69,80 @@
             
           <li class="pipe-row">
             <span class="tag t-source">Sourcing</span>
-            <div class="pipe-body">
-              <p class="pipe-title">Raw materials confirmed — 250 servings</p>
-              <p class="pipe-meta">Temple rice + Costco produce</p>
-            </div>
+            <div class="pipe-body"><p class="pipe-title">Raw materials confirmed — 250 servings</p><p class="pipe-meta">Temple rice + Costco produce</p></div>
             <span class="badge ok">Done</span>
           </li>
             
           <li class="pipe-row">
             <span class="tag t-prep">Prep</span>
-            <div class="pipe-body">
-              <p class="pipe-title">Cook at Temple kitchen — 6 volunteers</p>
-              <p class="pipe-meta">8:30–11:00 AM</p>
-            </div>
+            <div class="pipe-body"><p class="pipe-title">Cook at Temple kitchen — 6 volunteers</p><p class="pipe-meta">8:30–11:00 AM</p></div>
             <span class="badge info">In progress</span>
           </li>
             
           <li class="pipe-row">
             <span class="tag t-pack">Packing</span>
-            <div class="pipe-body">
-              <p class="pipe-title">250 kits at Bay B — 4 packers</p>
-              <p class="pipe-meta">160 / 250 done</p>
-            </div>
+            <div class="pipe-body"><p class="pipe-title">250 kits at Bay B — 4 packers</p><p class="pipe-meta">160 / 250 done</p></div>
             <span class="badge info">Running</span>
           </li>
             
           <li class="pipe-row">
             <span class="tag t-dist">Distribution</span>
-            <div class="pipe-body">
-              <p class="pipe-title">4 routes → 6 drop sites</p>
-              <p class="pipe-meta">Route 4 unassigned</p>
-            </div>
+            <div class="pipe-body"><p class="pipe-title">4 routes → 6 drop sites</p><p class="pipe-meta">Route 4 unassigned</p></div>
             <span class="badge crit">Needs driver</span>
           </li>
           </ul>
         </section>
 
-        <aside class="stack">
+        <div class="stack">
           <section class="card alert-card">
-            <span class="badge crit"><span class="pulse"></span> Needs you</span>
+            <span class="badge crit">Needs you</span>
             <h3>Route 4 has no driver</h3>
             <p class="muted">40 boxes · Eastside · pickup 12:15 PM</p>
-            <a class="btn btn-primary" href="roster.html">Assign a driver</a>
+            <button class="btn btn-primary" data-open="m-assign">Assign a driver</button>
           </section>
           <section class="card">
             <h3>Today's partners</h3>
             <ul class="mini-list">
-              <li><span class="avatar azure">HH</span> <span>Helping Hands</span> <span class="badge ok">120 meals</span></li>
-              <li><span class="avatar azure">CO</span> <span>City Outreach</span> <span class="badge ok">80 meals</span></li>
+              <li><span class="avatar alt">HH</span> <span>Helping Hands</span> <span class="badge ok">120 meals</span></li>
+              <li><span class="avatar alt">CO</span> <span>City Outreach</span> <span class="badge ok">80 meals</span></li>
             </ul>
           </section>
-        </aside>
+        </div>
       </div>
     </main>
   </div>
 
+  <dialog class="modal" id="m-assign">
+    <form method="dialog" class="modal-card">
+      <div class="modal-head">
+        <h3>Assign people</h3>
+        <button class="modal-x" value="cancel" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+      <label class="field"><span>Task</span>
+        <select><option>Prep — cook 250 servings</option><option>Packing — assemble 250 kits</option><option>Distribution — Route 4</option><option>Sourcing — confirm materials</option></select>
+      </label>
+      <p class="eyebrow">Available volunteers</p>
+      <ul class="picklist">
+        
+        <li><input type="checkbox"> <span class="avatar ">MG</span>
+          <span class="pl-main"><span class="pl-name">Marcus G.</span><span class="pl-meta">Cook · Pickup · weekends</span></span></li>
+        
+        <li><input type="checkbox"> <span class="avatar ">LT</span>
+          <span class="pl-main"><span class="pl-name">Lena T.</span><span class="pl-meta">Pack · Tue / Thu</span></span></li>
+        
+        <li><input type="checkbox"> <span class="avatar ">SO</span>
+          <span class="pl-main"><span class="pl-name">Sam O.</span><span class="pl-meta">Drive · Van (120 boxes)</span></span></li>
+        
+        <li><input type="checkbox"> <span class="avatar alt">HH</span>
+          <span class="pl-main"><span class="pl-name">Helping Hands</span><span class="pl-meta">Partner org · 120 meals/day</span></span></li>
+      </ul></div>
+      <div class="modal-foot">
+        <button class="btn btn-ghost" value="cancel">Cancel</button>
+        <button class="btn btn-primary" value="ok">Assign 0 people</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="../js/ui.js"></script>
 </body>
 </html>

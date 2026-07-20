@@ -24,7 +24,7 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge azure">Admin Console</span>
+    <span class="badge info">Admin Console</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
@@ -33,40 +33,44 @@
         <a href="command-center.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M13.4 10.6 19 5"/><path d="M4 20a9 9 0 1 1 16 0"/></svg></span>Command Center</a>
         <a href="master-task-creator.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.6"/></svg></span>Master Task Creator</a>
         <a href="supply.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Supply & Inventory</a>
-        <a href="roster.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/><path d="M21 20v-1a4 4 0 0 0-3-3.8"/></svg></span>Roster</a>
+        <a href="roster.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/></svg></span>Roster</a>
         <a href="media-queue.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Media Queue</a>
     </nav>
 
-    <main class="fade-in">
-      <header class="page-head">
+    <main>
+      <div class="page-head">
         <h1>Roster</h1>
-        <p class="lead">Everyone you assign from, with their skills, capacity, and status.</p>
-      </header>
+        <p class="lead">Everyone you assign from, with their skills and capacity.</p>
+      </div>
 
       <section class="card">
-        <div class="card-head"><h2>Volunteers</h2><button class="btn btn-ghost btn-sm">＋ Invite volunteer</button></div>
+        <div class="card-head"><h2>Volunteers</h2>
+          <details class="dropdown"><summary>Actions</summary>
+            <div class="menu"><button type="button" data-open="m-assign">Assign to task</button><button type="button">Invite volunteer</button><hr><button type="button">Export roster</button></div>
+          </details>
+        </div>
         <div class="table-wrap">
           <table class="table">
-            <thead><tr><th>Name</th><th>Home base</th><th>Can do</th><th>Vehicle</th><th>Available</th><th>Status</th></tr></thead>
+            <thead><tr><th>Name</th><th>Home base</th><th>Can do</th><th>Vehicle</th><th>Available</th><th>Status</th><th></th></tr></thead>
             <tbody>
-              <tr><td class="who"><span class="avatar ">PR</span> Priya R.</td><td>Sunnyvale</td><td>Cook · Drive · Pack</td><td class="num">Sedan · 60</td><td>Mon–Fri AM</td><td><span class="badge ok">Assigned</span></td></tr>
-              <tr><td class="who"><span class="avatar ">MG</span> Marcus G.</td><td>San Jose</td><td>Cook · Pickup</td><td class="num">—</td><td>Weekends</td><td><span class="badge">Available</span></td></tr>
-              <tr><td class="who"><span class="avatar ">SO</span> Sam O.</td><td>Fremont</td><td>Drive · Pickup</td><td class="num">Van · 120</td><td>Daily</td><td><span class="badge info">On route</span></td></tr>
-              <tr><td class="who"><span class="avatar ">LT</span> Lena T.</td><td>Santa Clara</td><td>Pack</td><td class="num">—</td><td>Tue / Thu</td><td><span class="badge">Available</span></td></tr>
+              <tr><td class="who"><span class="avatar ">PR</span> Priya R.</td><td>Sunnyvale</td><td>Cook · Drive · Pack</td><td class="num">Sedan · 60</td><td>Mon–Fri AM</td><td><span class="badge ok">Assigned</span></td><td><button class="btn btn-ghost btn-sm" data-open="m-assign">Assign</button></td></tr>
+              <tr><td class="who"><span class="avatar ">MG</span> Marcus G.</td><td>San Jose</td><td>Cook · Pickup</td><td class="num">—</td><td>Weekends</td><td><span class="badge">Available</span></td><td><button class="btn btn-ghost btn-sm" data-open="m-assign">Assign</button></td></tr>
+              <tr><td class="who"><span class="avatar ">SO</span> Sam O.</td><td>Fremont</td><td>Drive · Pickup</td><td class="num">Van · 120</td><td>Daily</td><td><span class="badge info">On route</span></td><td><button class="btn btn-ghost btn-sm" data-open="m-assign">Assign</button></td></tr>
+              <tr><td class="who"><span class="avatar ">LT</span> Lena T.</td><td>Santa Clara</td><td>Pack</td><td class="num">—</td><td>Tue / Thu</td><td><span class="badge">Available</span></td><td><button class="btn btn-ghost btn-sm" data-open="m-assign">Assign</button></td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <section class="card">
-        <div class="card-head"><h2>Partner organizations</h2><button class="btn btn-ghost btn-sm">＋ Invite org</button></div>
+        <div class="card-head"><h2>Partner organizations</h2></div>
         <div class="table-wrap">
           <table class="table">
             <thead><tr><th>Organization</th><th>Coverage</th><th>Daily capacity</th><th>Days claimed</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td class="who"><span class="avatar azure">HH</span> Helping Hands</td><td>Downtown + East</td><td class="num">120 meals</td><td>Mon, Wed, Fri</td><td><span class="badge ok">Active</span></td></tr>
-              <tr><td class="who"><span class="avatar azure">CO</span> City Outreach</td><td>South Bay</td><td class="num">80 meals</td><td>Thu</td><td><span class="badge ok">Active</span></td></tr>
-              <tr><td class="who"><span class="avatar azure">GS</span> Grace Shelter</td><td>Riverside</td><td class="num">60 meals</td><td>—</td><td><button class="btn btn-primary btn-sm">Approve</button></td></tr>
+              <tr><td class="who"><span class="avatar alt">HH</span> Helping Hands</td><td>Downtown + East</td><td class="num">120 meals</td><td>Mon, Wed, Fri</td><td><span class="badge ok">Active</span></td></tr>
+              <tr><td class="who"><span class="avatar alt">CO</span> City Outreach</td><td>South Bay</td><td class="num">80 meals</td><td>Thu</td><td><span class="badge ok">Active</span></td></tr>
+              <tr><td class="who"><span class="avatar alt">GS</span> Grace Shelter</td><td>Riverside</td><td class="num">60 meals</td><td>—</td><td><button class="btn btn-primary btn-sm" data-open="m-approve">Approve</button></td></tr>
             </tbody>
           </table>
         </div>
@@ -74,5 +78,54 @@
     </main>
   </div>
 
+  <dialog class="modal" id="m-assign">
+    <form method="dialog" class="modal-card">
+      <div class="modal-head">
+        <h3>Assign people</h3>
+        <button class="modal-x" value="cancel" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+      <label class="field"><span>Task</span>
+        <select><option>Prep — cook 250 servings</option><option>Packing — assemble 250 kits</option><option>Distribution — Route 4</option><option>Sourcing — confirm materials</option></select>
+      </label>
+      <p class="eyebrow">Available volunteers</p>
+      <ul class="picklist">
+        
+        <li><input type="checkbox"> <span class="avatar ">MG</span>
+          <span class="pl-main"><span class="pl-name">Marcus G.</span><span class="pl-meta">Cook · Pickup · weekends</span></span></li>
+        
+        <li><input type="checkbox"> <span class="avatar ">LT</span>
+          <span class="pl-main"><span class="pl-name">Lena T.</span><span class="pl-meta">Pack · Tue / Thu</span></span></li>
+        
+        <li><input type="checkbox"> <span class="avatar ">SO</span>
+          <span class="pl-main"><span class="pl-name">Sam O.</span><span class="pl-meta">Drive · Van (120 boxes)</span></span></li>
+        
+        <li><input type="checkbox"> <span class="avatar alt">HH</span>
+          <span class="pl-main"><span class="pl-name">Helping Hands</span><span class="pl-meta">Partner org · 120 meals/day</span></span></li>
+      </ul></div>
+      <div class="modal-foot">
+        <button class="btn btn-ghost" value="cancel">Cancel</button>
+        <button class="btn btn-primary" value="ok">Assign 0 people</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog class="modal" id="m-approve">
+    <form method="dialog" class="modal-card">
+      <div class="modal-head">
+        <h3>Approve Grace Shelter?</h3>
+        <button class="modal-x" value="cancel" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+      <p>Approving unlocks the partner portal for <strong>Grace Shelter</strong>: they can claim route days and log deliveries.</p>
+      <label class="field"><span>Coverage area</span><input type="text" value="Riverside"></label>
+      <label class="field"><span>Daily capacity (meals)</span><input type="number" value="60"></label>
+      <label class="check"><input type="checkbox" checked> Food-safety agreement received</label></div>
+      <div class="modal-foot">
+        <button class="btn btn-ghost" value="cancel">Cancel</button>
+        <button class="btn btn-primary" value="ok">Approve partner</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="../js/ui.js"></script>
 </body>
 </html>

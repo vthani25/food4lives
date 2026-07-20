@@ -24,7 +24,7 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge azure">Volunteer Portal</span>
+    <span class="badge info">Volunteer Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
@@ -37,23 +37,23 @@
         <a href="delivery-history.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
     </nav>
 
-    <main class="fade-in">
-      <header class="page-head">
+    <main>
+      <div class="page-head">
         <h1>My Tasks</h1>
         <p class="lead">Everything assigned to you. Filter by type, tap a task for details.</p>
-      </header>
-      
+      </div>
+
       <form class="filterbar" onsubmit="return false;">
         <label class="fchip"><input type="radio" name="tf" id="f-all" checked>All</label>
         <label class="fchip"><input type="radio" name="tf" id="f-source">Sourcing</label>
         <label class="fchip"><input type="radio" name="tf" id="f-prep">Prep</label>
         <label class="fchip"><input type="radio" name="tf" id="f-pack">Packing</label>
         <label class="fchip"><input type="radio" name="tf" id="f-dist">Distribution</label>
-
         <ul class="tasklist card">
           
           <li class="task cat-source">
             <input class="task-check" type="checkbox" id="m0" checked aria-label="Mark complete">
+            <img class="task-thumb" src="../img/task-sourcing.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-source">Sourcing</span><span class="task-time">Done 7:15 AM</span></div>
               <p class="task-title">Confirm rice from Tuesday temple pickup</p>
@@ -63,7 +63,8 @@
           </li>
           
           <li class="task cat-prep">
-            <input class="task-check" type="checkbox" id="m1"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="m1" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/task-prep.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-prep">Prep</span><span class="task-time">8:30 AM</span></div>
               <p class="task-title">Cook 250 servings — lemon rice &amp; sambar</p>
@@ -73,7 +74,8 @@
           </li>
           
           <li class="task cat-pack">
-            <input class="task-check" type="checkbox" id="m2"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="m2" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/task-packing.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-pack">Packing</span><span class="task-time">11:00 AM</span></div>
               <p class="task-title">Assemble 250 kits</p>
@@ -83,7 +85,8 @@
           </li>
           
           <li class="task cat-dist">
-            <input class="task-check" type="checkbox" id="m3"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="m3" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/task-distribution.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">12:00 PM</span></div>
               <p class="task-title">Drive Route 2 (90 boxes)</p>
@@ -96,5 +99,6 @@
     </main>
   </div>
 
+  <script src="../js/ui.js"></script>
 </body>
 </html>

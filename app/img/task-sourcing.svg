@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img">
+  <rect width="400" height="260" fill="#f6f1e7"/>
+  
+  <rect x="0" y="200" width="400" height="60" fill="#00146b"/>
+  <path d="M96 200V126c0-18 14-26 30-26s30 8 30 26v74z" fill="#1b3bb0"/>
+  <path d="M110 100h32l-6 18h-20z" fill="#00146b"/>
+  <path d="M186 200V138c0-16 13-24 27-24s27 8 27 24v62z" fill="#c6eaff"/>
+  <path d="M198 114h30l-5 16h-20z" fill="#00146b"/>
+  <rect x="262" y="140" width="76" height="60" rx="6" fill="#e6251f"/>
+  <rect x="262" y="158" width="76" height="8" fill="#fde4e3"/>
+  <rect x="262" y="178" width="76" height="8" fill="#fde4e3"/>
+</svg>

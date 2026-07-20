@@ -24,7 +24,7 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge azure">Admin Console</span>
+    <span class="badge info">Admin Console</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
@@ -33,53 +33,90 @@
         <a href="command-center.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M13.4 10.6 19 5"/><path d="M4 20a9 9 0 1 1 16 0"/></svg></span>Command Center</a>
         <a href="master-task-creator.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.6"/></svg></span>Master Task Creator</a>
         <a href="supply.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Supply & Inventory</a>
-        <a href="roster.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/><path d="M21 20v-1a4 4 0 0 0-3-3.8"/></svg></span>Roster</a>
+        <a href="roster.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/></svg></span>Roster</a>
         <a href="media-queue.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Media Queue</a>
     </nav>
 
-    <main class="fade-in">
-      <header class="page-head">
-        <h1>Supply & Sourcing</h1>
-        <p class="lead">Recurring temple pickups, grocery rescues, and what's running low.</p>
-      </header>
+    <main>
+      <div class="page-head">
+        <h1>Supply &amp; Sourcing</h1>
+        <p class="lead">Plan pickups across months, and catch shortfalls before they bite.</p>
+      </div>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Pickup calendar</h2>
+          <div class="cal-legend">
+            <span class="badge info">Temple</span>
+            <span class="badge">Rescue</span>
+            <button class="btn btn-primary btn-sm" data-open="m-pickup">＋ Schedule pickup</button>
+          </div>
+        </div>
+        <div class="cal-months">
+          <div class="cal-month"><h3>July 2026</h3><div class="calendar"><div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><button type="button" class="cal-day" data-open="m-pickup"><span>1</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>2</span></button><button type="button" class="cal-day rescue" data-open="m-pickup"><span>3</span><em>Rescue</em></button><button type="button" class="cal-day" data-open="m-pickup"><span>4</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>5</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>6</span></button><button type="button" class="cal-day rescue" data-open="m-pickup"><span>7</span><em>Rescue</em></button><button type="button" class="cal-day" data-open="m-pickup"><span>8</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>9</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>10</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>11</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>12</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>13</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>14</span></button><button type="button" class="cal-day pickup" data-open="m-pickup"><span>15</span><em>Temple</em></button><button type="button" class="cal-day" data-open="m-pickup"><span>16</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>17</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>18</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>19</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>20</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>21</span></button><button type="button" class="cal-day pickup" data-open="m-pickup"><span>22</span><em>Temple</em></button><button type="button" class="cal-day" data-open="m-pickup"><span>23</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>24</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>25</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>26</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>27</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>28</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>29</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>30</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>31</span></button></div></div>
+          <div class="cal-month"><h3>August 2026</h3><div class="calendar"><div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><button type="button" class="cal-day" data-open="m-pickup"><span>1</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>2</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>3</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>4</span></button><button type="button" class="cal-day pickup" data-open="m-pickup"><span>5</span><em>Temple</em></button><button type="button" class="cal-day" data-open="m-pickup"><span>6</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>7</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>8</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>9</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>10</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>11</span></button><button type="button" class="cal-day rescue" data-open="m-pickup"><span>12</span><em>Rescue</em></button><button type="button" class="cal-day" data-open="m-pickup"><span>13</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>14</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>15</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>16</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>17</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>18</span></button><button type="button" class="cal-day pickup" data-open="m-pickup"><span>19</span><em>Temple</em></button><button type="button" class="cal-day" data-open="m-pickup"><span>20</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>21</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>22</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>23</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>24</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>25</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>26</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>27</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>28</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>29</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>30</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>31</span></button></div></div>
+          <div class="cal-month"><h3>September 2026</h3><div class="calendar"><div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div><div class="cal-day empty"></div><div class="cal-day empty"></div><button type="button" class="cal-day" data-open="m-pickup"><span>1</span></button><button type="button" class="cal-day pickup" data-open="m-pickup"><span>2</span><em>Temple</em></button><button type="button" class="cal-day" data-open="m-pickup"><span>3</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>4</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>5</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>6</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>7</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>8</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>9</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>10</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>11</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>12</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>13</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>14</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>15</span></button><button type="button" class="cal-day pickup" data-open="m-pickup"><span>16</span><em>Temple</em></button><button type="button" class="cal-day" data-open="m-pickup"><span>17</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>18</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>19</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>20</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>21</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>22</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>23</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>24</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>25</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>26</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>27</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>28</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>29</span></button><button type="button" class="cal-day" data-open="m-pickup"><span>30</span></button></div></div>
+        </div>
+        <p class="muted" style="margin-top:12px">Click any day to add or edit a pickup.</p>
+      </section>
 
       <div class="grid-2">
         <section class="card">
-          <div class="card-head">
-            <h2>July pickup calendar</h2>
-            <div class="legend">
-              <span class="badge pickup">Temple</span>
-              <span class="badge ok">Rescue</span>
-            </div>
+          <div class="card-head"><h2>Ingredient inventory</h2>
+            <details class="dropdown"><summary>Actions</summary>
+              <div class="menu"><button type="button">Adjust counts</button><button type="button">Export CSV</button><hr><button type="button" data-open="m-pickup">Schedule purchase</button></div>
+            </details>
           </div>
-          <div class="calendar"><div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day"><span class="cal-num">1</span></div><div class="cal-day"><span class="cal-num">2</span></div><div class="cal-day rescue"><span class="cal-num">3</span><em>Rescue</em></div><div class="cal-day"><span class="cal-num">4</span></div><div class="cal-day"><span class="cal-num">5</span></div><div class="cal-day"><span class="cal-num">6</span></div><div class="cal-day rescue"><span class="cal-num">7</span><em>Rescue</em></div><div class="cal-day"><span class="cal-num">8</span></div><div class="cal-day"><span class="cal-num">9</span></div><div class="cal-day"><span class="cal-num">10</span></div><div class="cal-day"><span class="cal-num">11</span></div><div class="cal-day"><span class="cal-num">12</span></div><div class="cal-day"><span class="cal-num">13</span></div><div class="cal-day"><span class="cal-num">14</span></div><div class="cal-day pickup"><span class="cal-num">15</span><em>Temple</em></div><div class="cal-day"><span class="cal-num">16</span></div><div class="cal-day"><span class="cal-num">17</span></div><div class="cal-day"><span class="cal-num">18</span></div><div class="cal-day"><span class="cal-num">19</span></div><div class="cal-day"><span class="cal-num">20</span></div><div class="cal-day"><span class="cal-num">21</span></div><div class="cal-day pickup"><span class="cal-num">22</span><em>Temple</em></div><div class="cal-day"><span class="cal-num">23</span></div><div class="cal-day"><span class="cal-num">24</span></div><div class="cal-day"><span class="cal-num">25</span></div><div class="cal-day"><span class="cal-num">26</span></div><div class="cal-day"><span class="cal-num">27</span></div><div class="cal-day"><span class="cal-num">28</span></div><div class="cal-day"><span class="cal-num">29</span></div><div class="cal-day"><span class="cal-num">30</span></div><div class="cal-day"><span class="cal-num">31</span></div></div>
-          <button class="btn btn-ghost">＋ Schedule pickup</button>
-        </section>
-
-        <aside class="stack">
-          <section class="card">
-            <h2>Ingredient inventory</h2>
+          <div class="table-wrap">
             <table class="table">
               <thead><tr><th>Item</th><th>Qty</th><th>Status</th></tr></thead>
               <tbody>
                 <tr><td>Rice</td><td class="num">420 lbs</td><td><span class="badge ok">Ample</span></td></tr>
-                <tr><td>Lentils / dal</td><td class="num">85 lbs</td><td><span class="badge warn">Low</span></td></tr>
+                <tr><td>Lentils / dal</td><td class="num">85 lbs</td><td><span class="badge">Low</span></td></tr>
                 <tr><td>Fresh produce</td><td class="num">rescue</td><td><span class="badge ok">Ample</span></td></tr>
                 <tr><td>Water bottles</td><td class="num">1,100</td><td><span class="badge ok">Ample</span></td></tr>
                 <tr><td>Utensil kits</td><td class="num">180</td><td><span class="badge crit">Order</span></td></tr>
               </tbody>
             </table>
-          </section>
+          </div>
+        </section>
 
-          <section class="card alert-card soft">
-            <span class="badge warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg> Gap detected</span>
-            <p>Donations cover <strong>205 / 250</strong> meals Thursday. Schedule a purchase for the remaining 45.</p>
-            <button class="btn btn-primary">Schedule purchase trip</button>
-          </section>
-        </aside>
+        <section class="card">
+          <div class="card-media"><img src="../img/produce.svg" alt="Crate of rescued fresh produce"></div>
+          <span class="badge crit">Gap detected</span>
+          <h3 style="margin-top:10px">45 meals short on Thursday</h3>
+          <p class="muted">Donations cover 205 of 250. Schedule a purchase to close the gap.</p>
+          <button class="btn btn-primary" data-open="m-pickup" style="margin-top:12px">Schedule purchase trip</button>
+        </section>
       </div>
     </main>
   </div>
 
+  <dialog class="modal" id="m-pickup">
+    <form method="dialog" class="modal-card">
+      <div class="modal-head">
+        <h3>Schedule a pickup</h3>
+        <button class="modal-x" value="cancel" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+      <div class="field-row">
+        <label class="field"><span>Date</span><input type="date" value="2026-07-22"></label>
+        <label class="field"><span>Time</span><input type="time" value="09:00"></label>
+      </div>
+      <label class="field"><span>Type</span>
+        <select><option>Temple pickup — rice &amp; raw materials</option><option>Grocery rescue — Costco / Kroger</option><option>Direct purchase trip</option></select>
+      </label>
+      <label class="field"><span>Location</span><input type="text" value="Sri Venkateswara Temple"></label>
+      <label class="field"><span>Assigned volunteer</span>
+        <select><option>Unassigned</option><option>Sam O. — Van (120 boxes)</option><option>Marcus G.</option></select>
+      </label>
+      <label class="check"><input type="checkbox" checked> Repeat monthly</label></div>
+      <div class="modal-foot">
+        <button class="btn btn-ghost" value="cancel">Cancel</button>
+        <button class="btn btn-primary" value="ok">Save pickup</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="../js/ui.js"></script>
 </body>
 </html>
