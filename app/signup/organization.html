@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Organization sign-up — Sign up | Food4Lives</title>
+  <title>Organization sign-up | Food4Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/partner.css">
 </head>
 <body>
 
@@ -21,7 +25,7 @@
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
     <span class="badge">Sign up</span>
-    <a class="logout" href="../index.html">Log out</a>
+    <a class="logout" href="../index.html">Back to sign in</a>
   </header>
 
   <div class="shell">
@@ -30,42 +34,120 @@
       <a href="organization.html" class="active">Organization sign-up</a>
     </nav>
 
-    <!-- =================================================================
-         Build this page here. Everything below <main> is a spec, not UI —
-         delete the .spec block and add your own markup.
-         ================================================================= -->
-    <main>
-      <h1>Organization sign-up</h1>
-      <p class="purpose">Capture a partner's capacity and coverage so they can be matched to routes.</p>
+    <main class="fade-in">
+      <header class="page-head">
+        <h1>Partner organization sign-up</h1>
+        <p class="lead">Tell us about your org's capacity so we can match you to the right routes.</p>
+      </header>
 
-      <div class="spec">
-        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
-
-        <h2>Fields to collect</h2>
-        <ul>
-          <li>Org name & type; primary contact name, phone, email</li>
-          <li>Coverage area (regions / ZIPs)</li>
-          <li>Daily capacity (meals per day)</li>
-          <li>Fleet + total box capacity</li>
-        </ul>
-
-        <h2>Actions the user can take</h2>
-        <ul>
-          <li>Submit for approval; portal unlocks once an Admin approves</li>
-        </ul>
-
-        <h2>Connects to</h2>
-        <p>On approval → Partner Portal / Overview.</p>
-
-        <h2>Later, if there's time</h2>
-        <ul>
-          <li>Typical available days</li>
-          <li>Org logo for social attribution</li>
-          <li>Delivery & food-safety agreement</li>
-        </ul>
+      <div id="successBanner" class="success-banner">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Application submitted — an admin will review and unlock your portal within 24 hours.
       </div>
+
+      <section class="card form-card">
+        <form id="orgForm" onsubmit="handleSubmit(event)">
+
+          <p class="form-section-label">Organization details</p>
+
+          <label class="field">
+            <span>Organization name</span>
+            <input type="text" placeholder="e.g. Grady Heights Outreach" required>
+          </label>
+
+          <label class="field">
+            <span>Organization type</span>
+            <select required>
+              <option value="" disabled selected>Select a type</option>
+              <option>College / university club</option>
+              <option>High school club</option>
+              <option>Faith organization</option>
+              <option>Community nonprofit</option>
+              <option>Corporate volunteer group</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <p class="form-section-label">Primary contact</p>
+
+          <label class="field">
+            <span>Contact name</span>
+            <input type="text" placeholder="Full name" required>
+          </label>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Phone</span>
+              <input type="tel" placeholder="(404) 555-0100" required>
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" placeholder="contact@org.org" required>
+            </label>
+          </div>
+
+          <p class="form-section-label">Coverage &amp; capacity</p>
+
+          <fieldset>
+            <legend>Coverage area (select all that apply)</legend>
+            <label class="check"><input type="checkbox"> Westside / Vine City</label>
+            <label class="check"><input type="checkbox"> Old Fourth Ward</label>
+            <label class="check"><input type="checkbox"> Mechanicsville / Summerhill</label>
+            <label class="check"><input type="checkbox"> English Avenue / Bankhead</label>
+            <label class="check"><input type="checkbox"> Pittsburgh / Oakland City</label>
+            <label class="check"><input type="checkbox"> East Atlanta / Reynoldstown</label>
+            <label class="check"><input type="checkbox"> Southwest Atlanta</label>
+            <label class="check"><input type="checkbox"> Decatur / College Park</label>
+          </fieldset>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Daily meal capacity</span>
+              <input type="number" min="1" placeholder="e.g. 150" required>
+            </label>
+            <label class="field">
+              <span>Number of vehicles</span>
+              <input type="number" min="1" placeholder="e.g. 3" required>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Total box / container capacity</span>
+            <input type="number" min="1" placeholder="e.g. 200">
+          </label>
+
+          <fieldset>
+            <legend>Typical available days</legend>
+            <label class="check"><input type="checkbox"> Monday</label>
+            <label class="check"><input type="checkbox"> Tuesday</label>
+            <label class="check"><input type="checkbox"> Wednesday</label>
+            <label class="check"><input type="checkbox"> Thursday</label>
+            <label class="check"><input type="checkbox"> Friday</label>
+            <label class="check"><input type="checkbox"> Saturday</label>
+            <label class="check"><input type="checkbox"> Sunday</label>
+          </fieldset>
+
+          <label class="field">
+            <span>Anything else we should know?</span>
+            <textarea rows="3" placeholder="Dietary restrictions your org handles, special equipment, etc."></textarea>
+          </label>
+
+          <button class="btn btn-primary btn-block" type="submit">Submit application</button>
+          <p class="muted" style="margin-top:10px;text-align:center;">An admin will review your application and activate your portal within 24 hours.</p>
+        </form>
+      </section>
     </main>
   </div>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('successBanner').classList.add('visible');
+    e.target.style.opacity = '.45';
+    e.target.style.pointerEvents = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>

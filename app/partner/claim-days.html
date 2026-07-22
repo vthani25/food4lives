@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Claim Route Days — Partner Portal | Food4Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/partner.css">
 </head>
 <body>
 
@@ -26,45 +30,280 @@
 
   <div class="shell">
     <nav class="side">
-      <a href="overview.html">Overview</a>
-      <a href="claim-days.html" class="active">Claim Route Days</a>
-      <a href="log-impact.html">Log Impact</a>
-      <a href="our-deliveries.html">Our Deliveries</a>
+      <a href="overview.html">
+        <span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+        Overview
+      </a>
+      <a href="claim-days.html" class="active">
+        <span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        Claim Route Days
+      </a>
+      <a href="log-impact.html">
+        <span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+        Log Impact
+      </a>
+      <a href="our-deliveries.html">
+        <span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        Our Deliveries
+      </a>
     </nav>
 
-    <!-- =================================================================
-         Build this page here. Everything below <main> is a spec, not UI —
-         delete the .spec block and add your own markup.
-         ================================================================= -->
-    <main>
-      <h1>Claim Route Days</h1>
-      <p class="purpose">Let partners self-select which days they own, with no admin back-and-forth.</p>
+    <main class="fade-in">
+      <header class="page-head">
+        <h1>Claim Route Days</h1>
+        <p class="lead">Pick the days you can deliver — open days are yours to claim.</p>
+      </header>
 
-      <div class="spec">
-        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
+      <div id="claimSuccess" class="success-banner">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="claimSuccessMsg"></span>
+      </div>
 
-        <h2>Components to build</h2>
-        <ul>
-          <li>Calendar of open vs. claimed days</li>
-          <li>Route details per day (site, meal count)</li>
-        </ul>
+      <div class="grid-2">
+        <section class="card">
+          <div class="card-head">
+            <h2>July 2026</h2>
+          </div>
 
-        <h2>Actions the user can take</h2>
-        <ul>
-          <li>Claim an open day</li>
-        </ul>
+          <div class="cal-legend">
+            <span class="cal-legend-item"><span class="cal-dot open"></span>Open — claim it</span>
+            <span class="cal-legend-item"><span class="cal-dot mine"></span>Your commitment</span>
+            <span class="cal-legend-item"><span class="cal-dot taken"></span>Taken by another org</span>
+            <span class="cal-legend-item"><span class="cal-dot past"></span>Past</span>
+          </div>
 
-        <h2>Connects to</h2>
-        <p>Claimed days appear in the Admin Command Center.</p>
+          <div class="calendar" id="calendar">
+            <!-- Day-of-week headers -->
+            <div class="cal-dow">Sun</div>
+            <div class="cal-dow">Mon</div>
+            <div class="cal-dow">Tue</div>
+            <div class="cal-dow">Wed</div>
+            <div class="cal-dow">Thu</div>
+            <div class="cal-dow">Fri</div>
+            <div class="cal-dow">Sat</div>
+            <!-- Jul 1 = Wednesday (index 3) → 3 empty cells first -->
+            <div class="cal-day empty"></div>
+            <div class="cal-day empty"></div>
+            <div class="cal-day empty"></div>
+            <!-- Days 1–31 rendered by JS -->
+          </div>
+        </section>
 
-        <h2>Later, if there's time</h2>
-        <ul>
-          <li>Weekly recurring commitment</li>
-          <li>Release a claimed day</li>
-        </ul>
+        <div class="stack">
+          <!-- Route detail panel (shown on day select) -->
+          <div class="route-detail" id="routeDetail">
+            <h3 id="detailTitle">—</h3>
+            <div class="route-detail-grid">
+              <div class="route-detail-row">
+                <span>Drop-off site</span>
+                <strong id="detailSite">—</strong>
+              </div>
+              <div class="route-detail-row">
+                <span>Meal count</span>
+                <strong id="detailMeals">—</strong>
+              </div>
+              <div class="route-detail-row">
+                <span>Pickup window</span>
+                <strong id="detailPickup">11:00 – 11:30 AM</strong>
+              </div>
+              <div class="route-detail-row">
+                <span>Required by</span>
+                <strong id="detailBy">12:30 PM</strong>
+              </div>
+            </div>
+            <div id="detailActions"></div>
+          </div>
+
+          <section class="card">
+            <h2 style="margin-bottom:12px;">Your commitments this month</h2>
+            <ul class="route-list" id="myCommitments">
+              <li class="route-item">
+                <div class="route-date">
+                  <span class="route-date-month">Jul</span>
+                  <span class="route-date-day">23</span>
+                </div>
+                <div class="route-body">
+                  <p class="route-title">Westside Community Center</p>
+                  <p class="route-meta">85 meals</p>
+                </div>
+                <span class="badge ok">Claimed</span>
+              </li>
+              <li class="route-item">
+                <div class="route-date">
+                  <span class="route-date-month">Jul</span>
+                  <span class="route-date-day">25</span>
+                </div>
+                <div class="route-body">
+                  <p class="route-title">Old Fourth Ward Hub</p>
+                  <p class="route-meta">110 meals</p>
+                </div>
+                <span class="badge ok">Claimed</span>
+              </li>
+              <li class="route-item">
+                <div class="route-date">
+                  <span class="route-date-month">Jul</span>
+                  <span class="route-date-day">28</span>
+                </div>
+                <div class="route-body">
+                  <p class="route-title">Vine City Distribution Point</p>
+                  <p class="route-meta">90 meals</p>
+                </div>
+                <span class="badge ok">Claimed</span>
+              </li>
+            </ul>
+          </section>
+        </div>
       </div>
     </main>
   </div>
+
+<script>
+  // Day state: past | mine | taken | open
+  // July 2026: today = 21
+  const TODAY = 21;
+  const days = {
+    23: { state: 'mine',  site: 'Westside Community Center',    meals: 85  },
+    25: { state: 'mine',  site: 'Old Fourth Ward Hub',          meals: 110 },
+    28: { state: 'mine',  site: 'Vine City Distribution Point', meals: 90  },
+    22: { state: 'taken', site: 'Mechanicsville Center',        meals: 75  },
+    24: { state: 'taken', site: 'English Avenue Kitchen',       meals: 95  },
+    26: { state: 'taken', site: 'Summerhill Site',              meals: 80  },
+    29: { state: 'taken', site: 'East Atlanta Outreach',        meals: 60  },
+  };
+
+  const routes = [
+    'Westside Community Center',
+    'Old Fourth Ward Hub',
+    'Vine City Distribution Point',
+    'Mechanicsville Center',
+    'English Avenue Kitchen',
+    'Summerhill Site',
+    'Pittsburgh Neighborhood',
+    'East Atlanta Outreach',
+  ];
+
+  const mealCounts = [75, 80, 85, 90, 95, 100, 110, 120];
+
+  const cal = document.getElementById('calendar');
+  let selectedDay = null;
+
+  for (let d = 1; d <= 31; d++) {
+    const info = days[d];
+    let state = info ? info.state : (d <= TODAY ? 'past' : 'open');
+
+    const cell = document.createElement('div');
+    cell.className = 'cal-day';
+    cell.dataset.day = d;
+
+    if (d === TODAY) cell.classList.add('today-day');
+    if (state === 'past')  cell.classList.add('past-day');
+    if (state === 'mine')  cell.classList.add('mine-day');
+    if (state === 'taken') cell.classList.add('taken-day');
+    if (state === 'open')  cell.classList.add('open-day');
+
+    const num = document.createElement('span');
+    num.className = 'cal-num';
+    num.textContent = d;
+    cell.appendChild(num);
+
+    if (state === 'mine') {
+      const tag = document.createElement('span');
+      tag.className = 'cal-tag';
+      tag.textContent = 'Yours';
+      cell.appendChild(tag);
+    } else if (state === 'taken') {
+      const tag = document.createElement('span');
+      tag.className = 'cal-tag';
+      tag.textContent = 'Taken';
+      cell.appendChild(tag);
+    } else if (state === 'open') {
+      const tag = document.createElement('span');
+      tag.className = 'cal-tag';
+      tag.textContent = 'Open';
+      cell.appendChild(tag);
+    }
+
+    if (state !== 'past' && state !== 'taken') {
+      cell.addEventListener('click', () => selectDay(d, state, info));
+    }
+
+    cal.appendChild(cell);
+  }
+
+  function selectDay(d, state, info) {
+    // Deselect previous
+    if (selectedDay !== null) {
+      document.querySelector(`.cal-day[data-day="${selectedDay}"]`).classList.remove('selected-day');
+    }
+    selectedDay = d;
+    document.querySelector(`.cal-day[data-day="${d}"]`).classList.add('selected-day');
+
+    const panel  = document.getElementById('routeDetail');
+    const title  = document.getElementById('detailTitle');
+    const site   = document.getElementById('detailSite');
+    const meals  = document.getElementById('detailMeals');
+    const actions = document.getElementById('detailActions');
+
+    const routeInfo = info || {
+      site: routes[d % routes.length],
+      meals: mealCounts[d % mealCounts.length],
+    };
+
+    const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    // July 1 = Wed = index 3
+    const dow = dayNames[(3 + d - 1) % 7];
+
+    title.textContent  = `${dow}, July ${d}`;
+    site.textContent   = routeInfo.site;
+    meals.textContent  = `${routeInfo.meals} meals`;
+    panel.classList.add('visible');
+
+    if (state === 'mine') {
+      actions.innerHTML = `<span class="badge ok" style="font-size:13px;padding:6px 12px;">You've claimed this day</span>`;
+    } else {
+      actions.innerHTML = `<button class="btn btn-primary" onclick="claimDay(${d}, '${routeInfo.site}', ${routeInfo.meals})">Claim this day</button>`;
+    }
+  }
+
+  function claimDay(d, site, meals) {
+    // Update cell
+    const cell = document.querySelector(`.cal-day[data-day="${d}"]`);
+    cell.classList.remove('open-day');
+    cell.classList.add('mine-day');
+    const tag = cell.querySelector('.cal-tag');
+    if (tag) tag.textContent = 'Yours';
+
+    // Update panel
+    document.getElementById('detailActions').innerHTML =
+      `<span class="badge ok" style="font-size:13px;padding:6px 12px;">You've claimed this day</span>`;
+
+    // Add to commitments list
+    const list = document.getElementById('myCommitments');
+    const li = document.createElement('li');
+    li.className = 'route-item';
+    li.innerHTML = `
+      <div class="route-date">
+        <span class="route-date-month">Jul</span>
+        <span class="route-date-day">${d}</span>
+      </div>
+      <div class="route-body">
+        <p class="route-title">${site}</p>
+        <p class="route-meta">${meals} meals</p>
+      </div>
+      <span class="badge ok">Claimed</span>`;
+    // Insert sorted by day number
+    const items = Array.from(list.querySelectorAll('.route-item'));
+    const after = items.find(el => parseInt(el.querySelector('.route-date-day').textContent) > d);
+    list.insertBefore(li, after || null);
+
+    // Show success banner
+    const banner = document.getElementById('claimSuccess');
+    document.getElementById('claimSuccessMsg').textContent =
+      `July ${d} — ${site} (${meals} meals) is now in your schedule.`;
+    banner.classList.add('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>

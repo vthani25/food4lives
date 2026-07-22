@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Our Deliveries — Partner Portal | Food4Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/partner.css">
 </head>
 <body>
 
@@ -26,42 +30,142 @@
 
   <div class="shell">
     <nav class="side">
-      <a href="overview.html">Overview</a>
-      <a href="claim-days.html">Claim Route Days</a>
-      <a href="log-impact.html">Log Impact</a>
-      <a href="our-deliveries.html" class="active">Our Deliveries</a>
+      <a href="overview.html">
+        <span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+        Overview
+      </a>
+      <a href="claim-days.html">
+        <span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        Claim Route Days
+      </a>
+      <a href="log-impact.html">
+        <span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+        Log Impact
+      </a>
+      <a href="our-deliveries.html" class="active">
+        <span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        Our Deliveries
+      </a>
     </nav>
 
-    <!-- =================================================================
-         Build this page here. Everything below <main> is a spec, not UI —
-         delete the .spec block and add your own markup.
-         ================================================================= -->
-    <main>
-      <h1>Our Deliveries</h1>
-      <p class="purpose">The partner's own record of what they've done.</p>
+    <main class="fade-in">
+      <header class="page-head">
+        <h1>Our Deliveries</h1>
+        <p class="lead">Full record of every delivery Grady Heights Outreach has completed.</p>
+      </header>
 
-      <div class="spec">
-        <p class="spec-note">Nothing is built yet — this is the spec for whoever takes this page.</p>
-
-        <h2>Components to build</h2>
-        <ul>
-          <li>Table of past logs: date, route, meals, drop-off time</li>
-        </ul>
-
-        <h2>Actions the user can take</h2>
-        <ul>
-          <li>View past deliveries</li>
-        </ul>
-
-        <h2>Connects to</h2>
-        <p>Receives entries from Log Impact.</p>
-
-        <h2>Later, if there's time</h2>
-        <ul>
-          <li>Photo gallery view</li>
-          <li>Export / report download</li>
-        </ul>
+      <div class="history-kpi">
+        <div class="card stat">
+          <p class="stat-value">23</p>
+          <p class="stat-label">Total deliveries</p>
+        </div>
+        <div class="card stat">
+          <p class="stat-value">847</p>
+          <p class="stat-label">Total meals delivered</p>
+        </div>
+        <div class="card stat">
+          <p class="stat-value">98%</p>
+          <p class="stat-label">On-time rate</p>
+        </div>
       </div>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Delivery history</h2>
+          <a href="log-impact.html" class="btn btn-primary btn-sm">＋ Log delivery</a>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Drop-off site</th>
+                <th>Meals</th>
+                <th>Pickup</th>
+                <th>Drop-off</th>
+                <th>Status</th>
+                <th>Photo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="num">Jul 21, 2026</span></td>
+                <td>Mechanicsville Center</td>
+                <td><span class="num">95</span></td>
+                <td><span class="num">11:04 AM</span></td>
+                <td><span class="num">12:18 PM</span></td>
+                <td><span class="badge ok">On time</span></td>
+                <td><span class="photo-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span></td>
+              </tr>
+              <tr>
+                <td><span class="num">Jul 18, 2026</span></td>
+                <td>Westside Community Center</td>
+                <td><span class="num">85</span></td>
+                <td><span class="num">11:00 AM</span></td>
+                <td><span class="num">12:22 PM</span></td>
+                <td><span class="badge ok">On time</span></td>
+                <td><span class="photo-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span></td>
+              </tr>
+              <tr>
+                <td><span class="num">Jul 16, 2026</span></td>
+                <td>Old Fourth Ward Hub</td>
+                <td><span class="num">110</span></td>
+                <td><span class="num">11:08 AM</span></td>
+                <td><span class="num">12:41 PM</span></td>
+                <td><span class="badge warn">Late</span></td>
+                <td><span class="photo-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span></td>
+              </tr>
+              <tr>
+                <td><span class="num">Jul 14, 2026</span></td>
+                <td>Vine City Distribution Point</td>
+                <td><span class="num">90</span></td>
+                <td><span class="num">11:02 AM</span></td>
+                <td><span class="num">12:15 PM</span></td>
+                <td><span class="badge ok">On time</span></td>
+                <td><span class="photo-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span></td>
+              </tr>
+              <tr>
+                <td><span class="num">Jul 11, 2026</span></td>
+                <td>English Avenue Kitchen</td>
+                <td><span class="num">75</span></td>
+                <td><span class="num">11:00 AM</span></td>
+                <td><span class="num">12:08 PM</span></td>
+                <td><span class="badge ok">On time</span></td>
+                <td><span class="photo-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span></td>
+              </tr>
+              <tr>
+                <td><span class="num">Jul 9, 2026</span></td>
+                <td>Summerhill Site</td>
+                <td><span class="num">80</span></td>
+                <td><span class="num">11:05 AM</span></td>
+                <td><span class="num">12:20 PM</span></td>
+                <td><span class="badge ok">On time</span></td>
+                <td><span class="photo-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span></td>
+              </tr>
+              <tr>
+                <td><span class="num">Jul 7, 2026</span></td>
+                <td>Mechanicsville Center</td>
+                <td><span class="num">95</span></td>
+                <td><span class="num">11:00 AM</span></td>
+                <td><span class="num">12:25 PM</span></td>
+                <td><span class="badge ok">On time</span></td>
+                <td><span class="photo-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span></td>
+              </tr>
+              <tr>
+                <td><span class="num">Jun 30, 2026</span></td>
+                <td>Westside Community Center</td>
+                <td><span class="num">85</span></td>
+                <td><span class="num">11:03 AM</span></td>
+                <td><span class="num">12:19 PM</span></td>
+                <td><span class="badge ok">On time</span></td>
+                <td><span class="photo-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted" style="margin-top:14px;font-size:13px;">Showing 8 of 23 deliveries — <a href="#" class="link">load all</a></p>
+      </section>
     </main>
   </div>
 
