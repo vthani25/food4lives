@@ -1,4 +1,36 @@
 /* ==========================================================================
+   Food4Lives — Admin Console layout (depends on css/style.css tokens)
+   ========================================================================== */
+
+/* ---------- consistent vertical rhythm: one spacing rule for all blocks ---- */
+main > * + * { margin-top: 18px; }
+.grid-2 { display: grid; grid-template-columns: minmax(0,1.65fr) minmax(0,1fr); gap: 18px; align-items: start; }
+.grid-2 > * + * { margin-top: 0; }
+.stack { display: grid; gap: 18px; align-content: start; }
+.form-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+
+/* ---------- combined "today" panel (hero + metrics in one block) ---------- */
+.today {
+  display: grid; grid-template-columns: 260px minmax(0,1fr);
+  background: var(--blue-800); color: #fff; border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow);
+}
+.today-media { position: relative; }
+.today-media img { width: 100%; height: 100%; object-fit: cover; }
+.today-body { padding: 22px 24px; display: flex; flex-direction: column; justify-content: center; }
+.today-eyebrow { margin: 0 0 4px; font-family: var(--font-head); font-size: 11px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--blue-300); }
+.today-title { margin: 0 0 14px; font-family: var(--font-head); font-size: 27px; font-weight: 700; letter-spacing: -.02em; }
+.today-title span { color: var(--blue-100); }
+.today .progress { background: rgba(255,255,255,.2); }
+.today-sub { margin: 10px 0 0; font-size: 13.5px; color: #dbe3f7; }
+/* metric strip replaces the separate KPI cards */
+.metrics { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-top: 18px;
+  background: rgba(255,255,255,.16); border-radius: var(--radius-sm); overflow: hidden; }
+.metric { background: var(--blue-800); padding: 12px 14px; }
+.metric b { display: block; font-family: var(--font-head); font-size: 20px; font-weight: 700; line-height: 1.2; }
+.metric span { font-size: 11.5px; color: var(--blue-300); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+.metric.flag b { color: #ffb3b0; }
    Food4Lives — Admin Console styles  (depends on css/style.css tokens)
    ========================================================================== */
 
@@ -71,6 +103,7 @@
 
 /* ---------- task pipeline ------------------------------------------------- */
 .pipeline { list-style: none; margin: 0; padding: 0; }
+.pipe-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line-2); }
 .pipe-row {
   display: flex; align-items: center; gap: 12px;
   padding: 12px 0; border-top: 1px solid var(--line);
@@ -81,6 +114,17 @@
 .pipe-title { margin: 0; font-family: var(--font-head); font-weight: 600; font-size: 14px; }
 .pipe-meta  { margin: 1px 0 0; font-size: 12.5px; color: var(--muted); }
 
+/* ---------- alert card ---------- */
+.alert-card { border-left: 4px solid var(--red-600); }
+.alert-card h3 { margin: 10px 0 4px; }
+.alert-card p { font-size: 14px; margin: 0 0 14px; }
+
+/* ---------- avatars ---------- */
+.avatar { display: inline-grid; place-items: center; flex: none; width: 30px; height: 30px;
+  border-radius: 50%; background: var(--blue-800); color: #fff;
+  font-family: var(--font-head); font-size: 11px; font-weight: 600; }
+.avatar.alt   { background: var(--blue-100); color: var(--blue-800); }
+.avatar.more  { background: var(--blue-50);  color: var(--blue-700); }
 /* ---------- alert cards --------------------------------------------------- */
 .alert-card { border-left: 4px solid var(--red); }
 .alert-card.soft { border-left-color: var(--warn); }
@@ -119,7 +163,14 @@
 .avatar.more  { background: var(--hover); color: var(--navy); }
 .avatar.empty { background: #fff; color: var(--muted); border: 1.5px dashed var(--line); }
 .who { display: flex; align-items: center; gap: 9px; font-family: var(--font-head); font-weight: 600; }
+.mini-list { list-style: none; margin: 0; padding: 0; }
+.mini-list li { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line-2); font-size: 13.5px; }
+.mini-list li:first-child { border-top: 0; }
+.mini-list li span:nth-child(2) { flex: 1; }
 
+/* ---------- master task creator ---------- */
+.macro { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.macro label { font-family: var(--font-head); font-size: 16px; font-weight: 600; }
 /* ---------- master task creator ------------------------------------------ */
 .macro {
   display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
@@ -128,10 +179,57 @@
 .macro label { font-family: var(--font-head); font-size: 16px; font-weight: 600; color: var(--ink); }
 .macro input { width: auto; }
 .macro .macro-num { width: 84px; font-family: var(--font-head); font-weight: 700; text-align: center; }
-.macro input[type="time"] { width: 120px; }
-.macro .macro-date { margin-left: 2px; }
+.macro input[type=time] { width: 122px; }
 .macro .btn { margin-left: auto; }
 
+.split-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px; }
+.split-card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card);
+  box-shadow: var(--shadow); display: flex; flex-direction: column; overflow: hidden; }
+.split-card img { width: 100%; height: 104px; object-fit: cover; }
+.split-body { padding: 14px 16px; display: flex; flex-direction: column; flex: 1; }
+.split-body p { font-size: 13px; margin: 0 0 10px; }
+.split-meta { color: var(--muted); font-size: 12px; }
+.split-body .field { margin-top: auto; margin-bottom: 10px; }
+.assignees { display: flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 12px; flex-wrap: wrap; }
+
+/* ---------- multi-month calendar ---------- */
+.cal-months { display: grid; grid-template-columns: repeat(auto-fit, minmax(248px,1fr)); gap: 20px; }
+.cal-month h3 { margin: 0 0 10px; font-size: 13px; font-weight: 600; color: var(--blue-800); }
+.calendar { display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; }
+.cal-dow { font-family: var(--font-head); font-size: 10px; font-weight: 600; color: var(--muted); text-align: center; padding: 2px 0; }
+.cal-day {
+  aspect-ratio: 1; border: 1px solid var(--line); border-radius: 8px; padding: 4px;
+  background: var(--card); font-family: var(--font-head); font-size: 11.5px; font-weight: 600;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  cursor: pointer; color: var(--ink); transition: background var(--ease), border-color var(--ease);
+}
+.cal-day:hover { background: var(--blue-50); border-color: var(--blue-300); }
+.cal-day.empty { border: 0; background: none; cursor: default; }
+.cal-day em { font-style: normal; font-size: 8.5px; letter-spacing: .02em; }
+.cal-day.pickup { background: var(--blue-100); border-color: var(--blue-300); color: var(--blue-800); }
+.cal-day.rescue { background: var(--cream); border-color: #e4d9c2; color: var(--red-700); }
+.cal-legend { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ---------- media queue ---------- */
+.media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 14px; }
+.shot { margin: 0; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden;
+  background: var(--card); cursor: pointer; padding: 0; text-align: left; width: 100%; }
+.shot:hover { border-color: var(--blue-300); }
+.shot img { width: 100%; height: 112px; object-fit: cover; }
+.shot figcaption { padding: 8px 10px; font-family: var(--font-head); font-size: 12.5px; font-weight: 600; }
+.shot figcaption small { display: block; font-family: var(--font-body); font-weight: 400; color: var(--muted); }
+.caption-box { font-family: var(--font-body); line-height: 1.55; }
+
+@media (max-width: 1100px) { .split-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 900px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .today { grid-template-columns: 1fr; }
+  .today-media img { height: 150px; }
+  .metrics { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 560px) {
+  .split-grid { grid-template-columns: 1fr; }
+  .macro .btn { margin-left: 0; width: 100%; }
 .split-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .split-card {
   border: 1px solid var(--line); border-radius: var(--radius-sm);

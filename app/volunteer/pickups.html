@@ -24,7 +24,7 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge azure">Volunteer Portal</span>
+    <span class="badge info">Volunteer Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
@@ -37,33 +37,35 @@
         <a href="delivery-history.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
     </nav>
 
-    <main class="fade-in">
-      <header class="page-head">
-        <h1>Pickups & Rescues</h1>
+    <main>
+      <div class="page-head">
+        <h1>Pickups &amp; Rescues</h1>
         <p class="lead">Scheduled temple runs, plus a quick form to log grocery rescues.</p>
-      </header>
-      
+      </div>
+
       <div class="v-grid">
         <section class="card">
           <h2>Scheduled pickups</h2>
           <ul class="tasklist">
             
           <li class="task cat-source">
-            <input class="task-check" type="checkbox" id="p1"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="p1" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/task-sourcing.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-source">Sourcing</span><span class="task-time">Next: Jul 15</span></div>
               <p class="task-title">Sri Venkateswara Temple — rice + raw materials</p>
-              <p class="task-meta">1201 Temple Way · recurs 1st &amp; 15th</p>
+              <p class="task-meta">1201 Temple Way · repeats 1st &amp; 15th</p>
               <details class="task-details"><summary>Details &amp; instructions</summary><p>Bring the van. Loading dock is around the back; ask for the kitchen coordinator.</p></details>
             </div>
           </li>
             
           <li class="task cat-source">
-            <input class="task-check" type="checkbox" id="p2"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="p2" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/task-sourcing.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-source">Sourcing</span><span class="task-time">Next: Jul 22</span></div>
               <p class="task-title">Hindu Community Center — dry goods</p>
-              <p class="task-meta">88 Center St · recurs monthly</p>
+              <p class="task-meta">88 Center St · repeats monthly</p>
               
             </div>
           </li>
@@ -71,27 +73,22 @@
         </section>
 
         <section class="card">
+          <div class="card-media"><img src="../img/produce.svg" alt="Rescued produce ready to log"></div>
           <h2>Log leftover donations</h2>
           <p class="muted">30-second form — the kitchen sees it right away.</p>
-          <form onsubmit="return false;">
+          <form onsubmit="return false;" style="margin-top:14px">
             <label class="field"><span>Source</span>
-              <select><option>Costco — Sunnyvale</option><option>Kroger — Main St</option><option>Other grocery</option></select>
-            </label>
-            <label class="field"><span>Item</span>
-              <input type="text" placeholder="e.g. Produce, bread, rotisserie chicken">
-            </label>
-            <label class="field"><span>Quantity</span>
-              <input type="text" placeholder="e.g. 30 lbs / 40 units">
-            </label>
-            <label class="field"><span>Photo</span>
-              <input type="file" accept="image/*" capture="environment">
-            </label>
-            <button class="btn btn-primary" type="submit">Submit rescue log</button>
+              <select><option>Costco — Sunnyvale</option><option>Kroger — Main St</option><option>Other grocery</option></select></label>
+            <label class="field"><span>Item</span><input type="text" placeholder="e.g. Produce, bread, rotisserie chicken"></label>
+            <label class="field"><span>Quantity</span><input type="text" placeholder="e.g. 30 lbs / 40 units"></label>
+            <label class="field"><span>Photo</span><input type="file" accept="image/*" capture="environment"></label>
+            <button class="btn btn-primary btn-block" type="submit">Submit rescue log</button>
           </form>
         </section>
       </div>
     </main>
   </div>
 
+  <script src="../js/ui.js"></script>
 </body>
 </html>

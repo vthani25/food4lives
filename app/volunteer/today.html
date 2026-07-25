@@ -24,7 +24,7 @@
 
   <header class="topbar">
     <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
-    <span class="badge azure">Volunteer Portal</span>
+    <span class="badge info">Volunteer Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
@@ -37,61 +37,63 @@
         <a href="delivery-history.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
     </nav>
 
-    <main class="fade-in">
-      <header class="page-head">
+    <main>
+      <div class="page-head">
         <h1>Good morning, Priya</h1>
         <p class="lead">Here's what you're doing today, and how close we are to 12:30.</p>
-      </header>
-      
-      <section class="card goal-card">
-        <div class="goal-top">
-          <div>
-            <p class="goal-label">Today's goal</p>
-            <p class="goal-value">250 meals <span>by 12:30 PM</span></p>
-          </div>
-          <span class="goal-clock">12:30</span>
+      </div>
+
+      <section class="goal">
+        <div class="goal-media"><img src="../img/volunteer-hero.svg" alt="Hands cradling a heart, the Food4Lives mark"></div>
+        <div class="goal-body">
+          <p class="goal-eyebrow">Sunday, July 19</p>
+          <h2 class="goal-title">250 meals <span>by 12:30 PM</span></h2>
+          <div class="progress"><span style="width:64%"></span></div>
+          <p class="goal-sub"><strong>3</strong> of your tasks remaining · 1h 42m left</p>
         </div>
-        <div class="progress"><span style="width:64%"></span></div>
-        <p class="goal-sub"><strong>3</strong> of your tasks remaining · 1h 42m left</p>
       </section>
 
       <section class="card">
-        <div class="card-head"><h2>Your tasks today</h2><span class="badge azure">Temple kitchen</span></div>
+        <div class="card-head"><h2>Your tasks today</h2><span class="badge info">Temple kitchen</span></div>
         <ul class="tasklist">
           
           <li class="task cat-prep">
-            <input class="task-check" type="checkbox" id="t1"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="t1" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/task-prep.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-prep">Prep</span><span class="task-time">8:30 AM</span></div>
               <p class="task-title">Cook 250 servings — lemon rice &amp; sambar</p>
               <p class="task-meta">Sri Venkateswara Temple kitchen</p>
-              <details class="task-details"><summary>Details &amp; instructions</summary><p>Arrive by 8:15. Ask for Ravi at the kitchen. Rice and dal are already stocked; produce is in the walk-in.</p></details>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Arrive by 8:15. Ask for Ravi. Rice and dal are stocked; produce is in the walk-in.</p></details>
             </div>
           </li>
           
           <li class="task cat-pack">
-            <input class="task-check" type="checkbox" id="t2"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="t2" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/task-packing.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-pack">Packing</span><span class="task-time">11:00 AM</span></div>
               <p class="task-title">Assemble 250 kits: box + water + napkin + utensils</p>
               <p class="task-meta">Packing Bay B</p>
-              <details class="task-details"><summary>Details &amp; instructions</summary><p>Kits get stacked on pallet 3 by route number. Water and napkins are on the left shelf.</p></details>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Kits stack on pallet 3 by route number. Water and napkins on the left shelf.</p></details>
             </div>
           </li>
           
           <li class="task cat-dist">
-            <input class="task-check" type="checkbox" id="t3"  aria-label="Mark complete">
+            <input class="task-check" type="checkbox" id="t3" aria-label="Mark complete">
+            <img class="task-thumb" src="../img/task-distribution.svg" alt="">
             <div class="task-main">
               <div class="task-row"><span class="tag t-dist">Distribution</span><span class="task-time">12:00 PM</span></div>
               <p class="task-title">Drive Route 2 — Downtown shelter + 2 stops</p>
               <p class="task-meta">Van #3 · 90 boxes</p>
-              <details class="task-details"><summary>Details &amp; instructions</summary><p>Load from Bay B dock. Route sheet is in the glovebox. Upload a photo at each stop.</p></details>
+              <details class="task-details"><summary>Details &amp; instructions</summary><p>Load from the Bay B dock. Route sheet is in the glovebox. Upload a photo at each stop.</p></details>
             </div>
           </li>
         </ul>
       </section>
 
-      <section class="card quick-card">
+      <section class="card quick">
+        <img src="../img/produce.svg" alt="Crate of rescued produce">
         <div>
           <h3>Found leftover food?</h3>
           <p class="muted">Rescued something from Costco or Kroger? Log it so the kitchen can plan.</p>
@@ -101,5 +103,6 @@
     </main>
   </div>
 
+  <script src="../js/ui.js"></script>
 </body>
 </html>

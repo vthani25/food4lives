@@ -1,4 +1,23 @@
 /* ==========================================================================
+   Food4Lives — Volunteer Portal (depends on css/style.css tokens)
+   Mobile-first: single column by default.
+   ========================================================================== */
+
+main > * + * { margin-top: 18px; }
+.v-grid { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: start; }
+.v-grid > * + * { margin-top: 0; }
+
+/* ---------- today: image-led goal panel (solid, no gradient) ---------- */
+.goal { display: grid; grid-template-columns: 200px minmax(0,1fr);
+  background: var(--blue-800); color: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.goal-media img { width: 100%; height: 100%; object-fit: cover; }
+.goal-body { padding: 20px 22px; }
+.goal-eyebrow { margin: 0 0 4px; font-family: var(--font-head); font-size: 11px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--blue-300); }
+.goal-title { margin: 0 0 14px; font-family: var(--font-head); font-size: 23px; font-weight: 700; }
+.goal-title span { color: var(--blue-100); }
+.goal .progress { background: rgba(255,255,255,.2); }
+.goal-sub { margin: 10px 0 0; font-size: 13px; color: #dbe3f7; }
    Food4Lives — Volunteer Portal styles  (depends on css/style.css tokens)
    Mobile-first: single column by default, wider layouts on ≥720px.
    ========================================================================== */
@@ -25,6 +44,18 @@
 
 /* ---------- task list ----------------------------------------------------- */
 .tasklist { list-style: none; margin: 0; padding: 0; }
+.task { display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line-2); }
+.tasklist .task:first-child { border-top: 0; }
+.task-thumb { flex: none; width: 56px; height: 56px; border-radius: var(--radius-sm); object-fit: cover; border: 1px solid var(--line); }
+.task-check { flex: none; width: 22px; height: 22px; margin-top: 17px; accent-color: var(--blue-800); cursor: pointer; }
+.task-main { flex: 1; min-width: 0; }
+.task-row { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
+.task-time { font-family: var(--font-head); font-size: 12px; font-weight: 600; color: var(--muted); }
+.task-title { margin: 0; font-family: var(--font-head); font-weight: 600; font-size: 15px; line-height: 1.35; }
+.task-meta { margin: 3px 0 0; font-size: 13px; color: var(--muted); }
+.task-check:checked ~ .task-main .task-title { text-decoration: line-through; color: var(--muted); }
+.task-details { margin-top: 8px; }
+.task-details summary { font-family: var(--font-head); font-size: 12.5px; font-weight: 600; color: var(--blue-800); cursor: pointer; list-style: none; }
 .tasklist.card { padding: 4px 20px; }
 
 .task {
@@ -62,6 +93,23 @@
 .task-details summary::-webkit-details-marker { display: none; }
 .task-details summary::before { content: "▸ "; font-size: 10px; }
 .task-details[open] summary::before { content: "▾ "; }
+.task-details p { margin: 8px 0 0; font-size: 13.5px; background: var(--blue-50); padding: 10px 12px; border-radius: var(--radius-sm); }
+
+/* ---------- quick action ---------- */
+.quick { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.quick img { width: 84px; height: 84px; border-radius: var(--radius-sm); object-fit: cover; flex: none; }
+.quick div { flex: 1; min-width: 180px; }
+.quick h3 { margin: 0 0 3px; }
+
+/* ---------- My Tasks filter (label-wrapped radios + :has) ---------- */
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.fchip { position: relative; font-family: var(--font-head); font-size: 13px; font-weight: 600; color: var(--muted);
+  background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 7px 15px;
+  cursor: pointer; transition: background var(--ease), color var(--ease), border-color var(--ease); user-select: none; }
+.fchip input { position: absolute; opacity: 0; width: 0; height: 0; }
+.fchip:hover { background: var(--blue-50); }
+.fchip:has(input:checked) { background: var(--blue-800); color: #fff; border-color: var(--blue-800); }
+.filterbar .tasklist { flex-basis: 100%; margin-top: 4px; }
 .task-details p {
   margin: 8px 0 0; font-size: 13.5px; color: var(--ink);
   background: var(--hover); padding: 11px 14px;
@@ -98,6 +146,23 @@
 .filterbar:has(#f-pack:checked)   .task:not(.cat-pack),
 .filterbar:has(#f-dist:checked)   .task:not(.cat-dist) { display: none; }
 
+/* ---------- proof of delivery ---------- */
+.proof-media img { width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 14px; }
+
+/* ---------- history stats ---------- */
+.stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.stat { text-align: center; padding: 16px 12px; }
+.stat-value { margin: 0; font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--blue-800); }
+.stat-label { margin: 3px 0 0; font-size: 12px; color: var(--muted); }
+
+.form-card { max-width: 560px; }
+
+@media (min-width: 760px) { .v-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) {
+  .goal { grid-template-columns: 1fr; }
+  .goal-media img { height: 130px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .task-thumb { display: none; }
 /* ---------- layout helpers ------------------------------------------------ */
 .v-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
 .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--crit); display: inline-block; }
