@@ -46,29 +46,6 @@ partner/             Partner Portal (4 pages)
 
 Navigation is ordinary `<a href>` links — every page shares the same topbar + side-nav shell.
 
-## Design system (use these — they're global)
-
-`css/style.css` implements the team UI outline. Build with these tokens and classes
-so the whole site matches:
-
-- **Colors** (CSS variables): `--navy #2a5298`, `--red #d0534f`, `--azure #cce0ff`,
-  `--bg #f2f0ed` (page background), `--hover #eef3fb`.
-- **Fonts**: headings/labels/buttons use **Poppins** (`--font-head`); body text uses
-  **Source Serif 4** (`--font-body`). Loaded from Google Fonts by the `<link>` in each
-  page's `<head>` — not by an `@import`, which would block behind `style.css`.
-- **Shape/motion**: `--radius` (20px), `--shadow` (soft elevation), `--ease` (gentle transition).
-- **Top bar height**: `--topbar-h` (76px). The sticky `.side` nav offsets itself from this,
-  so change the bar's height in one place and the sidebar follows.
-- **Brand mark**: `images/logo.png` (heart-in-hands) — pairs with the `Food4Lives`
-  wordmark via the `.brand` component in every topbar and on the landing page.
-- **Photography**: `images/` holds real Food4Lives event photos. Used as hero
-  backgrounds behind portal banners (`.hero-photo`) and in the Media Queue — keep new
-  imagery consistent with that warm, on-the-ground documentary style rather than stock
-  photography.
-- **Reusable components**: `.btn` / `.btn-primary` / `.btn-ghost` / `.btn-sm`,
-  `.card` + `.card-head`, `.badge` (`.ok` `.warn` `.crit` `.info` `.azure`),
-  `.kpi-grid` / `.stat`, `.grid-2` / `.split-2`, form fields, `.table`.
-
 ## Building a page
 
 1. Copy the topbar + `.devbar` + `.shell`/`.side` structure from a page in the same
@@ -81,9 +58,6 @@ so the whole site matches:
 Keep the dev bar, topbar, and `.side` nav as they are so every page stays consistent.
 
 ## Accessibility
-
-Things already in place — keep them when you add pages:
-
 - Every page opens with `<a class="skip-link" href="#main">`, and its `<main>` carries
   `id="main"`, so keyboard users can jump past the dev bar and side nav.
 - `:focus-visible` draws a 3px navy outline globally. Don't remove outlines without
