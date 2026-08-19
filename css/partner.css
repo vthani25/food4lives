@@ -2,35 +2,6 @@
    Food4Lives — Partner Portal styles (depends on css/style.css tokens)
    ========================================================================== */
 
-.fade-in { animation: fadeUp 360ms var(--ease) both; }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-
-/* ---------- layout helpers ---------- */
-.grid-2 { display: grid; grid-template-columns: minmax(0,1.6fr) minmax(0,1fr); gap: 18px; align-items: start; }
-.stack  { display: flex; flex-direction: column; gap: 18px; }
-.stack .card { margin: 0; }
-
-/* ---------- KPI row ---------- */
-.kpi-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 18px; }
-.kpi {
-  display: flex; gap: 14px; align-items: center;
-  background: var(--card); border: 1px solid var(--line);
-  border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px 18px;
-  transition: box-shadow var(--ease), transform var(--ease);
-}
-.kpi:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
-.kpi-icon {
-  flex: none; width: 44px; height: 44px; border-radius: var(--radius-sm);
-  display: grid; place-items: center; background: var(--hover); color: var(--navy);
-}
-.kpi-icon svg { width: 21px; height: 21px; }
-.kpi-icon.ok   { background: var(--ok-bg);   color: var(--ok); }
-.kpi-icon.warn { background: var(--warn-bg); color: var(--warn); }
-.kpi-icon.crit { background: var(--crit-bg); color: var(--crit); }
-.kpi-label { margin: 0; font-family: var(--font-head); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; }
-.kpi-value { margin: 1px 0; font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1.1; font-variant-numeric: tabular-nums; }
-.kpi-sub   { margin: 0; font-size: 12.5px; color: var(--muted); }
-
 /* ---------- partner hero banner ------------------------------------------- */
 .partner-hero {
   background: linear-gradient(130deg, var(--navy) 0%, var(--navy-dark) 100%);
@@ -131,20 +102,8 @@
 .cal-dot.taken   { background: var(--line); }
 .cal-dot.past    { background: var(--stone); }
 
-.calendar { display: grid; grid-template-columns: repeat(7,1fr); gap: 5px; margin-bottom: 18px; }
-.cal-dow {
-  font-family: var(--font-head); font-size: 10px; font-weight: 600;
-  color: var(--muted); text-align: center; padding: 3px 0;
-}
-.cal-day {
-  aspect-ratio: 1; border: 1.5px solid var(--line); border-radius: var(--radius-sm);
-  padding: 5px 6px; font-size: 12px; background: var(--card);
-  display: flex; flex-direction: column; gap: 3px;
-  transition: border-color var(--ease), background var(--ease);
-  cursor: pointer; position: relative;
-}
+/* base .calendar/.cal-dow/.cal-day/.cal-num are global; day-state colors below */
 .cal-day:hover:not(.empty):not(.past-day):not(.taken-day) { border-color: var(--navy); background: var(--hover); }
-.cal-day.empty   { border: 0; background: transparent; cursor: default; }
 .cal-day.past-day { background: var(--stone); cursor: default; }
 .cal-day.past-day .cal-num { color: var(--muted); }
 .cal-day.open-day { background: var(--ok-bg); border-color: #bfe3cd; }
@@ -157,7 +116,6 @@
 .cal-day.today-day { outline: 2px solid var(--navy); outline-offset: 1px; }
 .cal-day.selected-day { border-color: var(--navy) !important; box-shadow: 0 0 0 3px rgba(0,20,107,.12); }
 
-.cal-num { font-family: var(--font-head); font-weight: 600; font-variant-numeric: tabular-nums; font-size: 13px; }
 .cal-tag { font-family: var(--font-head); font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); line-height: 1.1; }
 
 /* ---------- route detail panel ---------- */
@@ -183,11 +141,8 @@
 .upload-zone p { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
 .upload-zone svg { color: var(--muted); }
 
-/* ---------- delivery history ---------- */
+/* ---------- delivery history (.stat/.stat-value/.stat-label are global) --- */
 .history-kpi { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 18px; }
-.stat { text-align: center; padding: 18px 14px; margin: 0; }
-.stat-value { margin: 0; font-family: var(--font-head); font-size: 26px; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
-.stat-label { margin: 3px 0 0; font-size: 12px; color: var(--muted); font-family: var(--font-head); }
 
 /* ---------- photo thumb ---------- */
 .photo-thumb {
@@ -195,12 +150,6 @@
   border: 1px solid var(--line); display: inline-grid; place-items: center; color: var(--muted);
 }
 .photo-thumb svg { width: 14px; height: 14px; }
-
-/* ---------- form layout ---------- */
-.form-card { max-width: 600px; }
-.field-row  { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.btn-block  { width: 100%; margin-top: 6px; }
-.form-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
 
 /* ---------- section label ---------- */
 .form-section-label {
@@ -219,15 +168,11 @@
 .success-banner.visible { display: flex; }
 .success-banner svg { flex: none; }
 
-/* ---------- responsive ---------- */
+/* ---------- responsive (kpi-grid/grid-2/field-row breakpoints are global) - */
 @media (max-width: 900px) {
-  .kpi-grid    { grid-template-columns: repeat(2,1fr); }
-  .grid-2      { grid-template-columns: 1fr; }
   .history-kpi { grid-template-columns: repeat(3,1fr); }
 }
 @media (max-width: 560px) {
-  .kpi-grid    { grid-template-columns: 1fr 1fr; }
-  .field-row   { grid-template-columns: 1fr; }
   .route-detail-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {

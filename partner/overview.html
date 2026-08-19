@@ -12,7 +12,9 @@
 </head>
 <body>
 
-  <div class="devbar">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="devbar" role="note" aria-label="Developer shortcuts">
     <strong>DEV</strong>
     <a href="../volunteer/today.html">Volunteer</a>
     <a href="../admin/command-center.html">Admin</a>
@@ -23,14 +25,14 @@
   </div>
 
   <header class="topbar">
-    <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
+    <a class="brand" href="../index.html"><img class="brand-mark" src="../images/logo.png" alt="">Food<span>4</span>Lives</a>
     <span class="badge">Partner Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
   <div class="shell">
-    <nav class="side">
-      <a href="overview.html" class="active">
+    <nav class="side" aria-label="Partner Portal">
+      <a href="overview.html" class="active" aria-current="page">
         <span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
         Overview
       </a>
@@ -48,10 +50,10 @@
       </a>
     </nav>
 
-    <main class="fade-in">
+    <main id="main">
 
       <!-- impact hero -->
-      <section class="card partner-hero">
+      <section class="card partner-hero hero-photo" style="background-image:url('../images/recipient-portrait.png')">
         <div class="partner-hero-left">
           <p class="partner-hero-eyebrow">Partner since March 2025</p>
           <h1 class="partner-hero-org">Grady Heights Outreach</h1>

@@ -12,7 +12,9 @@
 </head>
 <body>
 
-  <div class="devbar">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="devbar" role="note" aria-label="Developer shortcuts">
     <strong>DEV</strong>
     <a href="../volunteer/today.html">Volunteer</a>
     <a href="../admin/command-center.html">Admin</a>
@@ -23,59 +25,69 @@
   </div>
 
   <header class="topbar">
-    <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
+    <a class="brand" href="../index.html"><img class="brand-mark" src="../images/logo.png" alt="">Food<span>4</span>Lives</a>
     <span class="badge azure">Sign up</span>
     <a class="logout" href="../index.html">Back to sign in</a>
   </header>
 
   <div class="shell">
-    <nav class="side">
-        <a href="volunteer.html" class="active">Volunteer sign-up</a>
+    <nav class="side" aria-label="Sign-up">
+        <a href="volunteer.html" class="active" aria-current="page">Volunteer sign-up</a>
         <a href="organization.html">Organization sign-up</a>
     </nav>
 
-    <main class="fade-in">
+    <main id="main">
       <header class="page-head">
         <h1>Become a volunteer</h1>
         <p class="lead">Tell us what you can help with, so we assign you the right tasks.</p>
       </header>
 
-      <section class="card form-card">
-        <form onsubmit="return false;">
-          <label class="field"><span>Full name</span><input type="text" placeholder="Priya Raman"></label>
-          <div class="field-row">
-            <label class="field"><span>Phone</span><input type="tel" placeholder="(408) 555-0142"></label>
-            <label class="field"><span>Email</span><input type="email" placeholder="you@email.com"></label>
+      <div class="split-2">
+        <section class="card form-card">
+          <form onsubmit="return false;">
+            <label class="field"><span>Full name</span><input type="text" placeholder="Priya Raman"></label>
+            <div class="field-row">
+              <label class="field"><span>Phone</span><input type="tel" placeholder="(408) 555-0142"></label>
+              <label class="field"><span>Email</span><input type="email" placeholder="you@email.com"></label>
+            </div>
+            <label class="field"><span>Location / ZIP</span><input type="text" placeholder="Sunnyvale 94086"></label>
+
+            <fieldset>
+              <legend>Skills</legend>
+              <label class="check"><input type="checkbox"> Cooking</label>
+              <label class="check"><input type="checkbox"> Packing</label>
+              <label class="check"><input type="checkbox"> Driving</label>
+              <label class="check"><input type="checkbox"> Pickup</label>
+            </fieldset>
+
+            <div class="field-row">
+              <label class="field"><span>Vehicle</span>
+                <select><option>No vehicle</option><option>Sedan</option><option>SUV</option><option>Van</option><option>Truck</option></select>
+              </label>
+              <label class="field"><span>Delivery capacity (boxes)</span><input type="number" placeholder="e.g. 60"></label>
+            </div>
+
+            <fieldset>
+              <legend>Availability</legend>
+              <label class="check"><input type="checkbox"> Weekday mornings</label>
+              <label class="check"><input type="checkbox"> Weekday afternoons</label>
+              <label class="check"><input type="checkbox"> Weekends</label>
+            </fieldset>
+
+            <label class="field"><span>Emergency contact</span><input type="text" placeholder="Name &amp; phone"></label>
+
+            <button class="btn btn-primary btn-block" type="submit">Create account</button>
+          </form>
+        </section>
+
+        <aside class="card photo-card">
+          <img src="../images/volunteers-group-smiling.png" alt="Food4Lives volunteers packing meals together at a street distribution table">
+          <div class="photo-card-caption">
+            <p>"Every hand on the line gets a meal out the door before 12:30."</p>
+            <span>— Food4Lives volunteer crew</span>
           </div>
-          <label class="field"><span>Location / ZIP</span><input type="text" placeholder="Sunnyvale 94086"></label>
-
-          <fieldset>
-            <legend>Skills</legend>
-            <label class="check"><input type="checkbox"> Cooking</label>
-            <label class="check"><input type="checkbox"> Packing</label>
-            <label class="check"><input type="checkbox"> Driving</label>
-            <label class="check"><input type="checkbox"> Pickup</label>
-          </fieldset>
-
-          <div class="field-row">
-            <label class="field"><span>Vehicle</span>
-              <select><option>No vehicle</option><option>Sedan</option><option>SUV</option><option>Van</option><option>Truck</option></select>
-            </label>
-            <label class="field"><span>Delivery capacity (boxes)</span><input type="number" placeholder="e.g. 60"></label>
-          </div>
-
-          <fieldset>
-            <legend>Availability</legend>
-            <label class="check"><input type="checkbox"> Weekday mornings</label>
-            <label class="check"><input type="checkbox"> Weekday afternoons</label>
-            <label class="check"><input type="checkbox"> Weekends</label>
-          </fieldset>
-
-          <label class="field"><span>Emergency contact</span><input type="text" placeholder="Name &amp; phone"></label>
-
-          <button class="btn btn-primary btn-block" type="submit">Create account</button>
-        </form>
-      </section>
+        </aside>
+      </div>
     </main>
   </div>
 

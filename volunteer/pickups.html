@@ -12,7 +12,9 @@
 </head>
 <body>
 
-  <div class="devbar">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="devbar" role="note" aria-label="Developer shortcuts">
     <strong>DEV</strong>
     <a href="../volunteer/today.html">Volunteer</a>
     <a href="../admin/command-center.html">Admin</a>
@@ -23,21 +25,21 @@
   </div>
 
   <header class="topbar">
-    <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
+    <a class="brand" href="../index.html"><img class="brand-mark" src="../images/logo.png" alt="">Food<span>4</span>Lives</a>
     <span class="badge azure">Volunteer Portal</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
   <div class="shell">
-    <nav class="side">
+    <nav class="side" aria-label="Volunteer Portal">
         <a href="today.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>Today</a>
         <a href="my-tasks.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3.5 6h.01"/><path d="M3.5 12h.01"/><path d="M3.5 18h.01"/></svg></span>My Tasks</a>
-        <a href="pickups.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Pickups & Rescues</a>
+        <a href="pickups.html" class="active" aria-current="page"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Pickups & Rescues</a>
         <a href="proof-of-delivery.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Proof of Delivery</a>
         <a href="delivery-history.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Delivery History</a>
     </nav>
 
-    <main class="fade-in">
+    <main id="main">
       <header class="page-head">
         <h1>Pickups & Rescues</h1>
         <p class="lead">Scheduled temple runs, plus a quick form to log grocery rescues.</p>

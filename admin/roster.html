@@ -12,7 +12,9 @@
 </head>
 <body>
 
-  <div class="devbar">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="devbar" role="note" aria-label="Developer shortcuts">
     <strong>DEV</strong>
     <a href="../volunteer/today.html">Volunteer</a>
     <a href="../admin/command-center.html">Admin</a>
@@ -23,21 +25,21 @@
   </div>
 
   <header class="topbar">
-    <a class="brand" href="../index.html">Food<span>4</span>Lives</a>
+    <a class="brand" href="../index.html"><img class="brand-mark" src="../images/logo.png" alt="">Food<span>4</span>Lives</a>
     <span class="badge azure">Admin Console</span>
     <a class="logout" href="../index.html">Log out</a>
   </header>
 
   <div class="shell">
-    <nav class="side">
+    <nav class="side" aria-label="Admin Console">
         <a href="command-center.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M13.4 10.6 19 5"/><path d="M4 20a9 9 0 1 1 16 0"/></svg></span>Command Center</a>
         <a href="master-task-creator.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.6"/></svg></span>Master Task Creator</a>
         <a href="supply.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>Supply & Inventory</a>
-        <a href="roster.html" class="active"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/><path d="M21 20v-1a4 4 0 0 0-3-3.8"/></svg></span>Roster</a>
+        <a href="roster.html" class="active" aria-current="page"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.2"/><path d="M17 11a3 3 0 0 0 0-6"/><path d="M21 20v-1a4 4 0 0 0-3-3.8"/></svg></span>Roster</a>
         <a href="media-queue.html"><span class="nav-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/></svg></span>Media Queue</a>
     </nav>
 
-    <main class="fade-in">
+    <main id="main">
       <header class="page-head">
         <h1>Roster</h1>
         <p class="lead">Everyone you assign from, with their skills, capacity, and status.</p>
@@ -49,10 +51,10 @@
           <table class="table">
             <thead><tr><th>Name</th><th>Home base</th><th>Can do</th><th>Vehicle</th><th>Available</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td class="who"><span class="avatar ">PR</span> Priya R.</td><td>Sunnyvale</td><td>Cook · Drive · Pack</td><td class="num">Sedan · 60</td><td>Mon–Fri AM</td><td><span class="badge ok">Assigned</span></td></tr>
-              <tr><td class="who"><span class="avatar ">MG</span> Marcus G.</td><td>San Jose</td><td>Cook · Pickup</td><td class="num">—</td><td>Weekends</td><td><span class="badge">Available</span></td></tr>
-              <tr><td class="who"><span class="avatar ">SO</span> Sam O.</td><td>Fremont</td><td>Drive · Pickup</td><td class="num">Van · 120</td><td>Daily</td><td><span class="badge info">On route</span></td></tr>
-              <tr><td class="who"><span class="avatar ">LT</span> Lena T.</td><td>Santa Clara</td><td>Pack</td><td class="num">—</td><td>Tue / Thu</td><td><span class="badge">Available</span></td></tr>
+              <tr><td class="who"><span class="avatar">PR</span> Priya R.</td><td>Sunnyvale</td><td>Cook · Drive · Pack</td><td class="num">Sedan · 60</td><td>Mon–Fri AM</td><td><span class="badge ok">Assigned</span></td></tr>
+              <tr><td class="who"><span class="avatar">MG</span> Marcus G.</td><td>San Jose</td><td>Cook · Pickup</td><td class="num">—</td><td>Weekends</td><td><span class="badge">Available</span></td></tr>
+              <tr><td class="who"><span class="avatar">SO</span> Sam O.</td><td>Fremont</td><td>Drive · Pickup</td><td class="num">Van · 120</td><td>Daily</td><td><span class="badge info">On route</span></td></tr>
+              <tr><td class="who"><span class="avatar">LT</span> Lena T.</td><td>Santa Clara</td><td>Pack</td><td class="num">—</td><td>Tue / Thu</td><td><span class="badge">Available</span></td></tr>
             </tbody>
           </table>
         </div>

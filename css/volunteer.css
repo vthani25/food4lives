@@ -103,20 +103,8 @@
 .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--crit); display: inline-block; }
 .proof-card h2 { margin: 8px 0 2px; font-size: 18px; color: var(--navy); }
 
-/* ---------- delivery history stats ---------------------------------------- */
+/* ---------- delivery history stats (.stat/.stat-value/.stat-label are global) */
 .kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
-.stat { text-align: center; padding: 18px 14px; margin: 0; }
-.stat-value {
-  margin: 0; font-family: var(--font-head);
-  font-size: 26px; font-weight: 700; color: var(--navy);
-  font-variant-numeric: tabular-nums;
-}
-.stat-label { margin: 4px 0 0; font-size: 12px; color: var(--muted); font-family: var(--font-head); font-weight: 600; letter-spacing: .02em; }
-
-/* ---------- sign-up form -------------------------------------------------- */
-.form-card { max-width: 560px; }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.btn-block { width: 100%; margin-top: 8px; }
 
 /* ---------- larger screens ------------------------------------------------ */
 @media (min-width: 720px) {
@@ -125,7 +113,6 @@
 
 /* ---------- mobile -------------------------------------------------------- */
 @media (max-width: 560px) {
-  .field-row     { grid-template-columns: 1fr; }
   .kpi-row       { grid-template-columns: 1fr; }
   .goal-value    { font-size: 19px; }
   .goal-clock    { font-size: 28px; }
